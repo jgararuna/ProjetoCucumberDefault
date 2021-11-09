@@ -11,7 +11,7 @@ import br.com.rabobank.ifd.cso.enums.DriverType;
 public class ConfigFileReader {
 
 	private Properties prop;
-	private final String local = "configs//Configuration.properties";
+	private final String local = "config//Configuration.properties";
 
 	public ConfigFileReader() {
 		BufferedReader reader;

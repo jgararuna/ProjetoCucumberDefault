@@ -16,20 +16,7 @@ public class PageObjectManager {
 	
 	public TelaInicialPage getTelaInicialPage() {
 		return (telaInicialPage == null) ? telaInicialPage = new TelaInicialPage(driver) : telaInicialPage;
-		
-		
+				
 	}
-	
-//	public TelaLoginPage getTelaLoginPage() {
-//		return (telaLoginPage == null) ? telaLoginPage = new TelaLoginPage(driver) : telaLoginPage;
-//		
-//		
-//	}
-//	public TelaFichaCadastralPage telaFichaCadastralPage() {
-//		return (telaFichaCadastralPage == null) ? telaFichaCadastralPage = new TelaFichaCadastralPage(driver) : telaFichaCadastralPage;
-//		
-//		
-//	}
-//	
 
 }

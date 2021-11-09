@@ -12,9 +12,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/main/resources/features", 
-				 glue = "br.com.rabobank.ifd.cso", 
-				 tags = {"@teste" }, 
+@CucumberOptions(features = "src/test/resources/features", 
+				 glue = "br.com.rabobank.ifd.cso.steps", 
+				 tags = {"@ExcluirImoveisNaoProprios" }, 
 				 plugin = "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html")
 
 public class Runner {
