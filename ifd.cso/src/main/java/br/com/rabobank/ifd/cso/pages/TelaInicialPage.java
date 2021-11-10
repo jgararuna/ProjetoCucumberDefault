@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rabobank.ifd.cso.utils.ScrollUtils;
 
@@ -12,10 +14,11 @@ public class TelaInicialPage {
 
 	private WebDriver driver;
 	private ScrollUtils scroll;
+	private WebDriverWait wait;
 
 	public TelaInicialPage(WebDriver driver) {
 		this.driver = driver;
-		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 15);
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 20);
 		PageFactory.initElements(factory, this);
 		scroll = new ScrollUtils(driver);
 	}
@@ -70,27 +73,36 @@ public class TelaInicialPage {
 		btnImoveisRurais.click();
 	}
 	
-	public void clicarNaoProprios() {
-		scroll.scrollPosicao(100);
+	public void clicarNaoProprios() throws InterruptedException {
+		scroll.scrollPosicao(200);
 		btnNaoProprios.click();
+		Thread.sleep(2000);
 	}
 
 	public void clicarIconeLixeira() throws InterruptedException {
+		scroll.scrollPosicao(200);
 		Thread.sleep(4000);
-		scroll.scrollPosicao(100);
 		btnIconeLixeira.click();
+		Thread.sleep(4000);
+		
 	}
 
-	public void clicarDeletar() {
+	public void clicarDeletar() throws InterruptedException {
+		Thread.sleep(2000);
 		btnDeletar.click();
+		Thread.sleep(6000);
 	}
 
 	
-	public void clicarCancelar() {
+	public void clicarCancelar() throws InterruptedException {
+		Thread.sleep(2000);
 		btnCancelar.click();
+		Thread.sleep(2000);
 	}
 	
-	public void fecharJanelaDeletar() {
+	public void fecharJanelaDeletar() throws InterruptedException {
+		Thread.sleep(2000);
 		btnFecharDeletar.click();
+		Thread.sleep(2000);
 	}
 }

@@ -58,7 +58,17 @@ public class TelaInicialStep {
 		telaInicialPage.clicarDeletar();
 	}
 
-	@Entao("^imovel sera deletado com sucesso$")
+	@Quando("^clico em Cancelar$")
+	public void clico_em_Cancelar() throws Throwable {
+		telaInicialPage.clicarCancelar();
+	}
+
+	@Quando("^clico no X para fechar a janela$")
+	public void clico_no_X_para_fechar_a_janela() throws Throwable {
+		telaInicialPage.fecharJanelaDeletar();
+	}
+
+	@Entao("^imovel nao proprio sera deletado com sucesso$")
 	public void imovel_sera_deletado_com_sucesso() throws Throwable {
 
 	}
