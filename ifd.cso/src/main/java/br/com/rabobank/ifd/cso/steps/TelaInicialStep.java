@@ -4,24 +4,26 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.rabobank.ifd.cso.pages.TelaInicialPage;
 import br.com.rabobank.ifd.cso.utils.ScreenshotUtils;
+import br.com.rabobank.ifd.cso.utils.ScrollUtils;
 import br.com.rabobank.ifd.cso.utils.TestContextUtils;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
-public class TelaInicaialIFDStep {
+public class TelaInicialStep {
 	
 	WebDriver driver;
 	private TestContextUtils testContext;
 	private TelaInicialPage telaInicialPage;
 	private ScreenshotUtils screenshot;
+	private ScrollUtils scroll;
 		
-	public TelaInicaialIFDStep(TestContextUtils context) {
+	public TelaInicialStep(TestContextUtils context) {
 	telaInicialPage = new TelaInicialPage(driver);
 	testContext = context;
 	telaInicialPage = testContext.getPageObjectManager().getTelaInicialPage();
 	screenshot = new ScreenshotUtils(context);
-	
+	scroll = new ScrollUtils(driver);
 	}
 
 	@Dado("^que faco login no site$")
@@ -34,26 +36,26 @@ public class TelaInicaialIFDStep {
 		telaInicialPage.clicarInformacoesPatrimoniais();
 	}
 
+	@Quando("^clico na aba de imoveis rurais$")
+	public void clico_na_aba_de_imoveis_rurais() throws Throwable {
+	    telaInicialPage.clicarAbaImoveisRurais();
+		
+	}
+
 	@Quando("^clico no botao nao proprios$")
 	public void clico_no_botao_nao_proprios() throws Throwable {
 		telaInicialPage.clicarNaoProprios();
 	}
 	
-	@Quando("^clico na aba de imoveis rurais$")
-	public void clico_na_aba_de_imoveis_rurais() throws Throwable {
-	    
-		
-	}
-
 
 	@Quando("^clico no icone da lixeira$")
 	public void clico_no_icone_da_lixeira() throws Throwable {
-		
+		telaInicialPage.clicarIconeLixeira();
 	}
 
 	@Quando("^clico em Deletar$")
 	public void clico_em_Deletar() throws Throwable {
-
+		telaInicialPage.clicarDeletar();
 	}
 
 	@Entao("^imovel sera deletado com sucesso$")
