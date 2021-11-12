@@ -14,10 +14,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features", 
 				 glue = "br.com.rabobank.ifd.cso.steps",
-				 tags = {"@Exclusao_ImoveisNaoProprios ,@CancelamentoExclusao_ImoveisNaoProprios, @CancelamentoExclusaoFechandoJanela_ImoveisNaoProprios"}, 
+				 tags = {"@ConsultaDenominacao_ImoveisNaoProprios"}, 
 				 plugin = "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html")
 
-//,@CancelamentoExclusao_ImoveisNaoProprios, @CancelamentoExclusaoFechandoJanela_ImoveisNaoProprios
 public class Runner {
 
 	@AfterClass

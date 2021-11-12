@@ -8,19 +8,22 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.com.rabobank.ifd.cso.utils.TempoEspera;
 import br.com.rabobank.ifd.cso.utils.ScrollUtils;
 
-public class TelaInicialPage {
+public class TelaImoveisRuraisPage {
 
 	private WebDriver driver;
 	private ScrollUtils scroll;
 	private WebDriverWait wait;
+	private TempoEspera espera;
 
-	public TelaInicialPage(WebDriver driver) {
+	public TelaImoveisRuraisPage(WebDriver driver) {
 		this.driver = driver;
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 20);
 		PageFactory.initElements(factory, this);
 		scroll = new ScrollUtils(driver);
+		espera = new TempoEspera();
 	}
 
 	@FindBy(xpath = "//*[@id=\"login\"]")
@@ -43,66 +46,123 @@ public class TelaInicialPage {
 
 	@FindBy(xpath = "//*[@id=\"icone_lixeira\"]")
 	private WebElement btnIconeLixeira;
-	
+
 	@FindBy(xpath = "//*[@id=\"deletar\"]")
 	private WebElement btnDeletar;
-	
+
 	@FindBy(xpath = "//*[@id=\"cancelar\"]")
 	private WebElement btnCancelar;
-	
+
 	@FindBy(xpath = "//*[@id=\"fechar_deletar\"]")
 	private WebElement btnFecharDeletar;
+
+	@FindBy(xpath = "//*[@id=\"option_filtro\"]")
+	private WebElement cmpFiltro;
+
+	@FindBy(xpath = "//*[@id=\"option_denominacao\"]")
+	private WebElement lblDenominacao;
+
+	@FindBy(xpath = "//*[@id=\"option_cidade\"]")
+	private WebElement lblCidade;
+
+	@FindBy(xpath = "//*[@id=\"option_uf\"]")
+	private WebElement lblUF;
+
+	@FindBy(xpath = "//*[@id=\"option_comarca\"]")
+	private WebElement lblComarca;
+
+	@FindBy(xpath = "//*[@id=\"pesquisar\"]")
+	private WebElement cmpPesquisar;
+
+	@FindBy(xpath = "//*[@id=\"lupa\"]")
+	private WebElement btnLupa;
 
 	// métodos
 
 	public void logarNoSiteIFD() throws InterruptedException {
-
 		cmpLogin.sendKeys("rabobank");
 		cmpSenha.sendKeys("rabobank1");
 
 		btnEntrar.click();
-		Thread.sleep(3000);
+		espera.sleep(3000);
 	}
 
-	public void clicarInformacoesPatrimoniais() throws InterruptedException{
+	public void clicarInformacoesPatrimoniais() throws InterruptedException {
 		btnInfPatrimoniais.click();
 	}
 
 	public void clicarAbaImoveisRurais() throws InterruptedException {
-		Thread.sleep(4000);
+		espera.sleep(4000);
 		btnImoveisRurais.click();
 	}
-	
+
 	public void clicarNaoProprios() throws InterruptedException {
 		scroll.scrollPosicao(200);
 		btnNaoProprios.click();
-		Thread.sleep(2000);
+		espera.sleep(2000);
 	}
 
 	public void clicarIconeLixeira() throws InterruptedException {
 		scroll.scrollPosicao(200);
-		Thread.sleep(4000);
+		espera.sleep(4000);
 		btnIconeLixeira.click();
-		Thread.sleep(4000);
-		
+		espera.sleep(4000);
+
 	}
 
 	public void clicarDeletar() throws InterruptedException {
-		Thread.sleep(2000);
+		espera.sleep(2000);
 		btnDeletar.click();
-		Thread.sleep(6000);
+		espera.sleep(6000);
 	}
 
-	
 	public void clicarCancelar() throws InterruptedException {
-		Thread.sleep(2000);
+		espera.sleep(2000);
 		btnCancelar.click();
-		Thread.sleep(2000);
+		espera.sleep(2000);
+	}
+
+	public void fecharJanelaDeletar() throws InterruptedException {
+		espera.sleep(2000);
+		btnFecharDeletar.click();
+		espera.sleep(4000);
+	}
+
+	public void clicarFiltro() {
+		cmpFiltro.click();
+	}
+
+	public void selecionarDenominacao() {
+		lblDenominacao.click();
+		scroll.scrollPosicao(100);		
+	}
+
+	public void selecionarCidade() {
+		lblCidade.click();
+		scroll.scrollPosicao(100);		
+	}
+
+	public void selecionarUF() {
+		lblUF.click();
+		scroll.scrollPosicao(100);		
+	}
+
+	public void selecionarComarca() {
+		lblComarca.click();
+		scroll.scrollPosicao(100);		
+	}
+
+	public void preencherPesquisa(String pesquisa) throws InterruptedException {
+		cmpPesquisar.click();
+		cmpPesquisar.sendKeys(pesquisa);
+		espera.sleep(2000);
+		
 	}
 	
-	public void fecharJanelaDeletar() throws InterruptedException {
-		Thread.sleep(2000);
-		btnFecharDeletar.click();
-		Thread.sleep(2000);
+	public void clicarLupa() throws InterruptedException {
+		espera.sleep(2000);
+		scroll.scrollPosicao(100);		
+		btnLupa.click();
+		espera.sleep(4000);
 	}
 }
