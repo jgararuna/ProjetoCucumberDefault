@@ -44,6 +44,9 @@ public class TelaImoveisRuraisPage {
 	@FindBy(xpath = "//*[@id=\"nao_proprios\"]")
 	private WebElement btnNaoProprios;
 
+	@FindBy(xpath = "//*[@id=\"proprios\"]")
+	private WebElement btnProprios;
+
 	@FindBy(xpath = "//*[@id=\"icone_lixeira\"]")
 	private WebElement btnIconeLixeira;
 
@@ -101,6 +104,12 @@ public class TelaImoveisRuraisPage {
 		btnNaoProprios.click();
 		espera.sleep(2000);
 	}
+	
+	public void clicarProprios() throws InterruptedException {
+		scroll.scrollPosicao(200);
+		btnProprios.click();
+		espera.sleep(2000);
+	}
 
 	public void clicarIconeLixeira() throws InterruptedException {
 		scroll.scrollPosicao(200);
@@ -156,7 +165,6 @@ public class TelaImoveisRuraisPage {
 		cmpPesquisar.click();
 		cmpPesquisar.sendKeys(pesquisa);
 		espera.sleep(2000);
-		
 	}
 	
 	public void clicarLupa() throws InterruptedException {

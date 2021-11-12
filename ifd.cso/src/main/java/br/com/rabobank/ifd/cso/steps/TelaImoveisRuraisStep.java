@@ -46,6 +46,11 @@ public class TelaImoveisRuraisStep {
 	public void clico_no_botao_nao_proprios() throws Throwable {
 		telaImoveisRuraisPage.clicarNaoProprios();
 	}
+
+	@Quando("^clico no botao proprios$")
+	public void clico_no_botao_proprios() throws Throwable {
+		telaImoveisRuraisPage.clicarProprios();
+	}
 	
 
 	@Quando("^clico no icone da lixeira$")
