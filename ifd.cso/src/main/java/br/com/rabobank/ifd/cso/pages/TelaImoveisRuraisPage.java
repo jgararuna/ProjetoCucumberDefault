@@ -1,29 +1,27 @@
 package br.com.rabobank.ifd.cso.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import br.com.rabobank.ifd.cso.utils.TempoEspera;
 import br.com.rabobank.ifd.cso.utils.ScrollUtils;
+import br.com.rabobank.ifd.cso.utils.TempoEsperaUtils;
 
 public class TelaImoveisRuraisPage {
 
 	private WebDriver driver;
 	private ScrollUtils scroll;
-	private WebDriverWait wait;
-	private TempoEspera espera;
+	private TempoEsperaUtils espera;
 
 	public TelaImoveisRuraisPage(WebDriver driver) {
 		this.driver = driver;
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 20);
 		PageFactory.initElements(factory, this);
 		scroll = new ScrollUtils(driver);
-		espera = new TempoEspera();
+		espera = new TempoEsperaUtils();
 	}
 
 	@FindBy(xpath = "//*[@id=\"login\"]")
@@ -90,7 +88,7 @@ public class TelaImoveisRuraisPage {
 		espera.sleep(3000);
 	}
 
-	public void clicarInformacoesPatrimoniais() throws InterruptedException {
+	public void clicarInformacoesPatrimoniais() {
 		btnInfPatrimoniais.click();
 	}
 
@@ -123,18 +121,35 @@ public class TelaImoveisRuraisPage {
 		espera.sleep(2000);
 		btnDeletar.click();
 		espera.sleep(6000);
+		
+		System.out.println("aguardando validação do link");
+		
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
+		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 
 	public void clicarCancelar() throws InterruptedException {
-		espera.sleep(2000);
 		btnCancelar.click();
 		espera.sleep(2000);
+		
+		System.out.println("aguardando validação do link");
+		
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
+		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 
 	public void fecharJanelaDeletar() throws InterruptedException {
 		espera.sleep(2000);
 		btnFecharDeletar.click();
 		espera.sleep(4000);
+		
+		System.out.println("aguardando validação do link");
+		
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
+		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 
 	public void clicarFiltro() {
@@ -171,6 +186,12 @@ public class TelaImoveisRuraisPage {
 		espera.sleep(2000);
 		scroll.scrollPosicao(100);		
 		btnLupa.click();
-		espera.sleep(4000);
+		espera.sleep(6000);
+		
+		System.out.println("aguardando validação do link");
+		
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
+		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 }

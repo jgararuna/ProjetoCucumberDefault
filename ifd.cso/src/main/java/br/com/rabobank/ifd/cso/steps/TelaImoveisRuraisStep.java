@@ -75,7 +75,7 @@ public class TelaImoveisRuraisStep {
 
 	@Entao("^imovel nao proprio sera deletado com sucesso$")
 	public void imovel_sera_deletado_com_sucesso() throws Throwable {
-		
+		screenshot.getScreenshot("Excluir_NaoProprio_Listar");
 	}
 	
 	@Quando("^clico na denominacao$")
@@ -110,7 +110,14 @@ public class TelaImoveisRuraisStep {
 
 	@Entao("^imovel nao proprio aparecera de acordo com a consulta$")
 	public void imovel_nao_proprio_aparecera_de_acordo_com_a_consulta() throws Throwable {
+		screenshot.getScreenshot("Listar_NaoProprios_Pesquisa");
+		
+	}
 	
+	@Entao("^imovel proprio aparecera de acordo com a consulta$")
+	public void imovel_proprio_aparecera_de_acordo_com_a_consulta() throws Throwable {
+		screenshot.getScreenshot("Listar_Proprios_Pesquisa");
+		
 	}
 
 }

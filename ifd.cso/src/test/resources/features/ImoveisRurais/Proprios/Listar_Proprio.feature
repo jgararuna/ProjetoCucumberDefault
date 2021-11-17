@@ -13,7 +13,7 @@ Funcionalidade: Validar consulta na listagem de Imoveis Proprios
     E clico na denominacao
     E preencho o campo "<Pesquisar>"
     E clico na lupa
-    Entao imovel nao proprio aparecera de acordo com a consulta
+    Entao imovel proprio aparecera de acordo com a consulta
 
     Exemplos: 
       | Pesquisar |
@@ -26,11 +26,11 @@ Funcionalidade: Validar consulta na listagem de Imoveis Proprios
     E clico em UF
     E preencho o campo "<Pesquisar>"
     E clico na lupa
-    Entao imovel nao proprio aparecera de acordo com a consulta
+    Entao imovel proprio aparecera de acordo com a consulta
 
     Exemplos: 
       | Pesquisar |
-      | SP       |
+      | SP        |
 
   @ConsultaCidade_ImoveisProprios
   Esquema do Cenário: CT007 - Validar a consulta de imoveis proprios atraves do filtro cidade com sucesso
@@ -39,11 +39,11 @@ Funcionalidade: Validar consulta na listagem de Imoveis Proprios
     E clico na cidade
     E preencho o campo "<Pesquisar>"
     E clico na lupa
-    Entao imovel nao proprio aparecera de acordo com a consulta
+    Entao imovel proprio aparecera de acordo com a consulta
 
     Exemplos: 
-      | Pesquisar   |
-      | Adolfo |
+      | Pesquisar |
+      | Adolfo    |
 
   @ConsultaComarca_ImoveisProprios
   Esquema do Cenário: CT008 - Validar a consulta de imoveis proprios atraves do filtro comarca com sucesso
@@ -52,7 +52,7 @@ Funcionalidade: Validar consulta na listagem de Imoveis Proprios
     E clico na comarca
     E preencho o campo "<Pesquisar>"
     E clico na lupa
-    Entao imovel nao proprio aparecera de acordo com a consulta
+    Entao imovel proprio aparecera de acordo com a consulta
 
     Exemplos: 
       | Pesquisar |
