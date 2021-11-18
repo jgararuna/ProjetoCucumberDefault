@@ -1,5 +1,7 @@
 #language: pt
 #coding:utf-8
+
+@Geral_IFD @ExclusaoImoveisNaoProprios
 Funcionalidade: Validar consulta na listagem de Imoveis Proprios
 
   Contexto: 
@@ -30,7 +32,7 @@ Funcionalidade: Validar consulta na listagem de Imoveis Proprios
 
     Exemplos: 
       | Pesquisar |
-      | SP        |
+      | BA        |
 
   @ConsultaCidade_ImoveisProprios
   Esquema do Cenário: CT007 - Validar a consulta de imoveis proprios atraves do filtro cidade com sucesso

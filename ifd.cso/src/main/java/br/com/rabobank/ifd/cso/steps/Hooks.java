@@ -26,11 +26,18 @@ public class Hooks {
 
 	}
 
+//	@Before
+//	public void beforeScenario(Scenario scenario) {
+//		if (scenario.getName().equals("Some scenario name")) {
+//			Reporter.assignAuthor("IFD - Angra");
+//		}
+//	}
+
 	@After(order = 1)
 	public void afterScenario(Scenario scenario) {
 		if (scenario.isFailed()) {
 			String screenshotName = scenario.getName().replaceAll(" ", "_");
-				screenshot.getScreenshot(screenshotName + " - Falhou");
+			screenshot.getScreenshot(screenshotName + " - Falhou");
 		}
 	}
 

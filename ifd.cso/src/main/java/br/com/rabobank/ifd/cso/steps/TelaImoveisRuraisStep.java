@@ -21,7 +21,7 @@ public class TelaImoveisRuraisStep {
 	public TelaImoveisRuraisStep(TestContextUtils context) {
 	telaImoveisRuraisPage = new TelaImoveisRuraisPage(driver);
 	testContext = context;
-	telaImoveisRuraisPage = testContext.getPageObjectManager().getTelaInicialPage();
+	telaImoveisRuraisPage = testContext.getPageObjectManager().getTelaImoveisRuraisPage();
 	screenshot = new ScreenshotUtils(context);
 	scroll = new ScrollUtils(driver);
 	}
@@ -75,7 +75,12 @@ public class TelaImoveisRuraisStep {
 
 	@Entao("^imovel nao proprio sera deletado com sucesso$")
 	public void imovel_sera_deletado_com_sucesso() throws Throwable {
-		screenshot.getScreenshot("Excluir_NaoProprio_Listar");
+		screenshot.getScreenshot("Excluir_NaoProprio");
+	}
+
+	@Entao("^imovel nao proprio nao sera deletado$")
+	public void imovel_nao_proprio_nao_sera_deletado() throws Throwable {
+		screenshot.getScreenshot("Excluir_NaoProprio");
 	}
 	
 	@Quando("^clico na denominacao$")

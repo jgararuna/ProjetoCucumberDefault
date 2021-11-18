@@ -43,7 +43,7 @@ Funcionalidade: Validar consulta na listagem de Imoveis Nao Proprios
 
     Exemplos: 
       | Pesquisar   |
-      | Aba |
+      | Paranapanema|
 
   @ConsultaComarca_ImoveisNaoProprios
   Esquema do Cenário: CT008 - Validar a consulta de imoveis nao proprios atraves do filtro comarca com sucesso
@@ -56,4 +56,4 @@ Funcionalidade: Validar consulta na listagem de Imoveis Nao Proprios
 
     Exemplos: 
       | Pesquisar |
-      | Aba       |
+      | Acauã     |

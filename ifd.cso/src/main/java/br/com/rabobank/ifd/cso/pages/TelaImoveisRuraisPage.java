@@ -54,7 +54,8 @@ public class TelaImoveisRuraisPage {
 	@FindBy(xpath = "//*[@id=\"cancelar\"]")
 	private WebElement btnCancelar;
 
-	@FindBy(xpath = "//*[@id=\"fechar_deletar\"]")
+//	@FindBy(xpath = "//*[@id=\"fechar_deletar\"]")
+	@FindBy(id = "fechar")
 	private WebElement btnFecharDeletar;
 
 	@FindBy(xpath = "//*[@id=\"option_filtro\"]")
@@ -69,7 +70,8 @@ public class TelaImoveisRuraisPage {
 	@FindBy(xpath = "//*[@id=\"option_uf\"]")
 	private WebElement lblUF;
 
-	@FindBy(xpath = "//*[@id=\"option_comarca\"]")
+//	@FindBy(xpath = "//*[@id=\"option_comarca\"]")
+	@FindBy(id = "comarca")
 	private WebElement lblComarca;
 
 	@FindBy(xpath = "//*[@id=\"pesquisar\"]")
@@ -104,7 +106,7 @@ public class TelaImoveisRuraisPage {
 	}
 	
 	public void clicarProprios() throws InterruptedException {
-		scroll.scrollPosicao(200);
+		scroll.scrollPosicao(250);
 		btnProprios.click();
 		espera.sleep(2000);
 	}
@@ -141,7 +143,6 @@ public class TelaImoveisRuraisPage {
 	}
 
 	public void fecharJanelaDeletar() throws InterruptedException {
-		espera.sleep(2000);
 		btnFecharDeletar.click();
 		espera.sleep(4000);
 		

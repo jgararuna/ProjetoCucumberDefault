@@ -8,15 +8,13 @@ public class PageObjectManager {
 
 	
 	private WebDriver driver;
-	private TelaImoveisRuraisPage telaInicialPage;
+	private TelaImoveisRuraisPage telaImoveisRuraisPage;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	public TelaImoveisRuraisPage getTelaInicialPage() {
-		return (telaInicialPage == null) ? telaInicialPage = new TelaImoveisRuraisPage(driver) : telaInicialPage;
-				
+	public TelaImoveisRuraisPage getTelaImoveisRuraisPage() {
+		return (telaImoveisRuraisPage == null) ? telaImoveisRuraisPage = new TelaImoveisRuraisPage(driver) : telaImoveisRuraisPage;			
 	}
-
 }
