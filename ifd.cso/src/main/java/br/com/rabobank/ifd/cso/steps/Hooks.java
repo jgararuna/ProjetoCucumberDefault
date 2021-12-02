@@ -9,29 +9,22 @@ import cucumber.api.java.Before;
 
 public class Hooks {
 
-	private TestContextUtils testContext;
+	private TestContextUtils ttestContext;
 	private ConfigFileReader configLeitorDeArquivos;
 	private ScreenshotUtils screenshot;
 
 	public Hooks(TestContextUtils context) {
-		testContext = context;
+		ttestContext = context;
 		configLeitorDeArquivos = new ConfigFileReader();
 		screenshot = new ScreenshotUtils(context);
 	}
 
 	@Before
 	public void BeforeSteps() {
-		testContext.getWebDriverManager().startBrowser();
-		testContext.getWebDriverManager().getUrl(configLeitorDeArquivos.getUrl());
+		ttestContext.getWebDriverManager().startBrowser();
+		ttestContext.getWebDriverManager().getUrl(configLeitorDeArquivos.getUrl());
 
 	}
-
-//	@Before
-//	public void beforeScenario(Scenario scenario) {
-//		if (scenario.getName().equals("Some scenario name")) {
-//			Reporter.assignAuthor("IFD - Angra");
-//		}
-//	}
 
 	@After(order = 1)
 	public void afterScenario(Scenario scenario) {
@@ -43,6 +36,6 @@ public class Hooks {
 
 	@After(order = 0)
 	public void AfterSteps() {
-		testContext.getWebDriverManager().quitDriver();
+		ttestContext.getWebDriverManager().quitDriver();
 	}
 }

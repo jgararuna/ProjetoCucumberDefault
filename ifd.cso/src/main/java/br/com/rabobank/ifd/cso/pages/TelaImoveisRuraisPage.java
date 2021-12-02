@@ -37,7 +37,7 @@ public class TelaImoveisRuraisPage {
 	private WebElement btnInfPatrimoniais;
 
 	@FindBy(xpath = "//*[@id=\"pills-properties-tab\"]")
-	private WebElement btnImoveisRurais;
+	private WebElement btnAbaImoveisRurais;
 
 	@FindBy(xpath = "//*[@id=\"nao_proprios\"]")
 	private WebElement btnNaoProprios;
@@ -96,7 +96,7 @@ public class TelaImoveisRuraisPage {
 
 	public void clicarAbaImoveisRurais() throws InterruptedException {
 		espera.sleep(4000);
-		btnImoveisRurais.click();
+		btnAbaImoveisRurais.click();
 	}
 
 	public void clicarNaoProprios() throws InterruptedException {
