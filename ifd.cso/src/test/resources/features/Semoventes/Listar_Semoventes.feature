@@ -35,11 +35,11 @@ Funcionalidade: Validar consulta na listagem de Semoventes
   @ConsultaInexistente_Semoventes
   Esquema do Cenário: CT007 - Validar a consulta de semoventes inexistente
     E clico na aba de semoventes
-    E clico no "<Filtro>" qualquer
+    E clico no filtro qualquer
     E preencho o campo "<Pesquisar>"
     E clico na lupa
     Entao semovente aparecera de acordo com a consulta
 
     Exemplos: 
-      | Filtro | Pesquisar |
-      | Tipo   | Galo      |
+      | Pesquisar |
+      | Galo      |

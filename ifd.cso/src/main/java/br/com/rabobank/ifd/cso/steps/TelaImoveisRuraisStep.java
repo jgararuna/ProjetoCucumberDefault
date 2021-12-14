@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import br.com.rabobank.ifd.cso.pages.TelaImoveisRuraisPage;
 import br.com.rabobank.ifd.cso.utils.ScreenshotUtils;
-import br.com.rabobank.ifd.cso.utils.ScrollUtils;
 import br.com.rabobank.ifd.cso.utils.TestContextUtils;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
@@ -16,14 +15,12 @@ public class TelaImoveisRuraisStep {
 	private TestContextUtils testContext;
 	private TelaImoveisRuraisPage telaImoveisRuraisPage;
 	private ScreenshotUtils screenshot;
-	private ScrollUtils scroll;
 		
 	public TelaImoveisRuraisStep(TestContextUtils context) {
 	telaImoveisRuraisPage = new TelaImoveisRuraisPage(driver);
 	testContext = context;
 	telaImoveisRuraisPage = testContext.getPageObjectManager().getTelaImoveisRuraisPage();
 	screenshot = new ScreenshotUtils(context);
-	scroll = new ScrollUtils(driver);
 	}
 
 	@Dado("^que faco login no site$")

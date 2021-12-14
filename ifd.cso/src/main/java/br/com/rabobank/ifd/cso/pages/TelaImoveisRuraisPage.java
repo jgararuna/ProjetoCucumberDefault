@@ -1,6 +1,5 @@
 package br.com.rabobank.ifd.cso.pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -83,7 +82,10 @@ public class TelaImoveisRuraisPage {
 	// métodos
 
 	public void logarNoSiteIFD() throws InterruptedException {
+		cmpLogin.click();
 		cmpLogin.sendKeys("rabobank");
+		
+		cmpSenha.click();
 		cmpSenha.sendKeys("rabobank1");
 
 		btnEntrar.click();
@@ -123,34 +125,16 @@ public class TelaImoveisRuraisPage {
 		espera.sleep(2000);
 		btnDeletar.click();
 		espera.sleep(6000);
-		
-		System.out.println("aguardando validação do link");
-		
-		String url = driver.getCurrentUrl();
-		System.out.println(url);
-		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 
 	public void clicarCancelar() throws InterruptedException {
 		btnCancelar.click();
 		espera.sleep(2000);
-		
-		System.out.println("aguardando validação do link");
-		
-		String url = driver.getCurrentUrl();
-		System.out.println(url);
-		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 
 	public void fecharJanelaDeletar() throws InterruptedException {
 		btnFecharDeletar.click();
 		espera.sleep(4000);
-		
-		System.out.println("aguardando validação do link");
-		
-		String url = driver.getCurrentUrl();
-		System.out.println(url);
-		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 
 	public void clicarFiltro() {
@@ -188,11 +172,5 @@ public class TelaImoveisRuraisPage {
 		scroll.scrollPosicao(100);		
 		btnLupa.click();
 		espera.sleep(6000);
-		
-		System.out.println("aguardando validação do link");
-		
-		String url = driver.getCurrentUrl();
-		System.out.println(url);
-		Assert.assertEquals(url,"https://ifdrabobank.l3.com.br/patrimonial/imoveis-rurais");
 	}
 }

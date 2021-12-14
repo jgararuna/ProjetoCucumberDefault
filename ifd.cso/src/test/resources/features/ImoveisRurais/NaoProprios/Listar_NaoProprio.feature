@@ -24,7 +24,7 @@ Funcionalidade: Validar consulta na listagem de Imoveis Nao Proprios
     E clico na aba de imoveis rurais
     E clico no botao nao proprios
     E clico em UF
-    E preencho o campo "<pesquisar>"
+    E preencho o campo "<Pesquisar>"
     E clico na lupa
     Entao imovel nao proprio aparecera de acordo com a consulta
 
