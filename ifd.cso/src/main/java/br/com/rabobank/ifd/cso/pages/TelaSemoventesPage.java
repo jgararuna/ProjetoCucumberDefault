@@ -21,7 +21,7 @@ public class TelaSemoventesPage {
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 20);
 		PageFactory.initElements(factory, this);
 		scroll = new ScrollUtils(driver);
-		espera = new TempoEsperaUtils();
+		espera = new TempoEsperaUtils(driver);
 	}
 
 	@FindBy(xpath = "//*[@id=\"pills-livestock-tab\"]")
