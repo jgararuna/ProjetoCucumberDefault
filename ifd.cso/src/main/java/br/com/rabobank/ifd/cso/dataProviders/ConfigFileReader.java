@@ -73,7 +73,7 @@ public class ConfigFileReader {
 	}
 
 	public String getReportConfigPath() {
-		String reportConfigPath = System.getProperty("user.dir") + ("caminhoExtendConfig");
+		String reportConfigPath = System.getProperty("user.dir") + prop.getProperty("caminhoExtendConfig");
 		return reportConfigPath;
 	}
 
