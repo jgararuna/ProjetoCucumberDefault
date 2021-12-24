@@ -6,9 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import br.com.rabobank.ifd.cso.utils.ScrollUtils;
-import br.com.rabobank.ifd.cso.utils.TempoEsperaUtils;
-
 public class TelaImoveisRuraisPage {
 
 	protected WebDriver driver;
@@ -54,8 +51,7 @@ public class TelaImoveisRuraisPage {
 	@FindBy(xpath = "//*[@id=\"cancelar\"]")
 	protected WebElement btnCancelar;
 
-//	@FindBy(xpath = "//*[@id=\"fechar_deletar\"]")
-	@FindBy(id = "fechar")
+	@FindBy(xpath = "//*[@id=\"fechar_deletar\"]")
 	protected WebElement btnFecharDeletar;
 
 	@FindBy(xpath = "//*[@id=\"option_filtro\"]")
@@ -70,8 +66,7 @@ public class TelaImoveisRuraisPage {
 	@FindBy(xpath = "//*[@id=\"option_uf\"]")
 	protected WebElement lblUF;
 
-//	@FindBy(xpath = "//*[@id=\"option_comarca\"]")
-	@FindBy(id = "comarca")
+	@FindBy(xpath = "//*[@id=\"option_comarca\"]")
 	protected WebElement lblComarca;
 
 	@FindBy(xpath = "//*[@id=\"pesquisar\"]")
@@ -79,6 +74,15 @@ public class TelaImoveisRuraisPage {
 
 	@FindBy(xpath = "//*[@id=\"lupa\"]")
 	protected WebElement btnLupa;
+	
+	// Não proprios
+	
+	
+	
+	
+	
+	
+	
 
 //	// métodos
 //
