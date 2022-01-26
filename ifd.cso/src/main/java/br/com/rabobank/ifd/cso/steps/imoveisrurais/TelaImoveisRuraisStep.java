@@ -1,4 +1,4 @@
-package br.com.rabobank.ifd.cso.steps;
+package br.com.rabobank.ifd.cso.steps.imoveisrurais;
 
 import org.openqa.selenium.WebDriver;
 
@@ -131,10 +131,10 @@ public class TelaImoveisRuraisStep {
 		telaImoveisRuraisObject.logarNoSiteIFD();
 	}
 
-	@Quando("^clico no botao de informacoes patrimoniais$")
-	public void clico_no_botao_de_informacoes_patrimoniais() throws Throwable {
-		telaImoveisRuraisObject.clicarInformacoesPatrimoniais();
-	}
+//	@Quando("^clico no botao de informacoes patrimoniais$")
+//	public void clico_no_botao_de_informacoes_patrimoniais() throws Throwable {
+//		telaImoveisRuraisObject.clicarInformacoesPatrimoniais();
+//	}
 
 	@Quando("^clico na aba de imoveis rurais$")
 	public void clico_na_aba_de_imoveis_rurais() throws Throwable {
