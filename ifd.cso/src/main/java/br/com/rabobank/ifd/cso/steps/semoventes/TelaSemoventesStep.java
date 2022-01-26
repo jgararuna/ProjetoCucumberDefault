@@ -1,4 +1,4 @@
-package br.com.rabobank.ifd.cso.steps;
+package br.com.rabobank.ifd.cso.steps.semoventes;
 
 import org.openqa.selenium.WebDriver;
 
