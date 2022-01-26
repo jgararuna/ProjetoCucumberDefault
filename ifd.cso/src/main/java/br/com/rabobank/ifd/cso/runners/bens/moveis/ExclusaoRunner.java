@@ -13,7 +13,7 @@ import com.vimalselvam.cucumber.listener.ExtentProperties;
 import com.vimalselvam.cucumber.listener.Reporter;
 
 import br.com.rabobank.ifd.cso.managers.FileReaderManager;
-import br.com.rabobank.ifd.cso.runners.Runner2;
+import br.com.rabobank.ifd.cso.runners.RunnerModel;
 import br.com.rabobank.ifd.cso.runners.RunnerSetup;
 import br.com.rabobank.ifd.cso.steps.comuns.TelaLoginStep;
 import br.com.rabobank.ifd.cso.steps.hooks.Hooks;
