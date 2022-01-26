@@ -6,9 +6,7 @@ import br.com.rabobank.ifd.cso.object.TelaBensMoveisObject;
 import br.com.rabobank.ifd.cso.object.TelaGeralObject;
 import br.com.rabobank.ifd.cso.object.TelaImoveisRuraisObject;
 import br.com.rabobank.ifd.cso.object.TelaLoginObject;
-import br.com.rabobank.ifd.cso.pages.TelaImoveisRuraisPage;
-import br.com.rabobank.ifd.cso.pages.TelaLoginPage;
-import br.com.rabobank.ifd.cso.pages.TelaSemoventesPage;
+//import br.com.rabobank.ifd.cso.object.TelaSemoventesObject;
 
 public class PageObjectManager {
 
@@ -20,10 +18,13 @@ public class PageObjectManager {
 	private TelaLoginObject telaLoginObject;
 	private TelaGeralObject telaGeralObject;
 	
-	private TelaImoveisRuraisObject telaImoveisRuraisObject;
-	private TelaSemoventesPage telaSemoventesPage;
+	//private TelaSemoventesPage telaSemoventesPage;
 	private TelaBensMoveisObject telaBensMoveisObject;
 
+//	private TelaImoveisRuraisPage telaImoveisRuraisPage;
+	private TelaImoveisRuraisObject telaImoveisRuraisObject;
+	//private TelaSemoventesObject telaSemoventesObject;
+//	private TelaSemoventesPage telaSemoventesPage;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -41,9 +42,13 @@ public class PageObjectManager {
 		return (telaGeralObject == null) ? telaGeralObject = new TelaGeralObject(driver) : telaGeralObject;
 	}
 
-	public TelaSemoventesPage getTelaSemoventePage() {
-		return (telaSemoventesPage == null) ? telaSemoventesPage = new TelaSemoventesPage(driver) : telaSemoventesPage;
-	}
+//	public TelaSemoventesPage getTelaSemoventePage() {
+//		return (telaSemoventesPage == null) ? telaSemoventesPage = new TelaSemoventesPage(driver) : telaSemoventesPage;
+//	}
+	
+//	public TelaSemoventesObject getTelaSemoventesObject() {
+//		return (telaSemoventesObject == null) ? telaSemoventesObject = new TelaSemoventesObject(driver) : telaSemoventesObject;			
+//	}
 	
 	public TelaImoveisRuraisObject getTelaImoveisRuraisObject() {
 		return (telaImoveisRuraisObject == null) ? telaImoveisRuraisObject = new TelaImoveisRuraisObject(driver) : telaImoveisRuraisObject;			
