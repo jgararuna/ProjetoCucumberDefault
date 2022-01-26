@@ -1,10 +1,14 @@
 package br.com.rabobank.ifd.cso.utils;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.vimalselvam.cucumber.listener.Reporter;
 
 public class TempoEsperaUtils{
 	
@@ -42,16 +46,18 @@ public class TempoEsperaUtils{
 		
 	}
 	
-	public boolean verificarLoadDesaparecer(int tempoEsperaSegundos) {
+	//public boolean verificarLoadDesaparecer(int tempoEsperaSegundos) {
+	public void verificarLoadDesaparecer(int tempoEsperaSegundos) {
 		
+		boolean verificador = false;
 		WebElement load = driver.findElement(By.xpath("/html/body/app-root/app-spinner"));
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, tempoEsperaSegundos);
 			wait.until(ExpectedConditions.invisibilityOf(load));
-			return true;
-		}catch (Exception e) {
-			return false;
-		}
+		}catch (TimeoutException to) {
+			Reporter.addStepLog("A página demorou mais que " + tempoEsperaSegundos + " segundos para carregar.");
+			Assert.assertTrue(verificador);		
+		}	
 		
 	}
 	
