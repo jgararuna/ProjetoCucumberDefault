@@ -232,10 +232,20 @@ public class FolderUtils {
 //	    return chosenFile;
 		Path parentFolder = Paths.get(directoryFilePath);
 		 
-		Optional<File> mostRecentFolder = Arrays.stream(parentFolder.toFile().listFiles()).filter(f -> f.isDirectory()).max((f1, f2) -> Long.compare(f1.lastModified(),f2.lastModified()));
+		Optional<File> mostRecentFolder =
+			    Arrays
+			        .stream(parentFolder.toFile().listFiles())
+			        .filter(f -> f.isDirectory())
+			        .max(
+			            (f1, f2) -> Long.compare(f1.lastModified(),
+			                f2.lastModified()));
 
-		Optional<File> mostRecentFileOrFolder = Arrays.stream(parentFolder.toFile().listFiles()).max((f1, f2) -> Long.compare(f1.lastModified(),f2.lastModified()));
-		
+		Optional<File> mostRecentFileOrFolder =
+		    Arrays
+		        .stream(parentFolder.toFile().listFiles())
+		        .max(
+		            (f1, f2) -> Long.compare(f1.lastModified(),
+		                f2.lastModified()));
 		File mostRecent = null;
 		if (mostRecentFolder.isPresent()) {
 		    mostRecent = mostRecentFileOrFolder.get();
