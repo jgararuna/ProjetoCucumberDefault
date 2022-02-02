@@ -52,7 +52,6 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage{
 		espera.verificarElementoClicavel(10, btnAbaBensMoveisImoveis);
 		espera.verificarLoadDesaparecer(10);
 		btnAbaBensMoveisImoveis.click();
-		System.out.println("aba");
 		espera.verificarLoadDesaparecer(10);
 		
 	}
@@ -62,7 +61,6 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage{
 		
 //		espera.verificarLoadDesaparecer(10);
 		numItensAntes = listWebElementUtils.listChildOfWebElement(listaBensMoveis);
-		System.out.println(numItensAntes);
 		espera.verificarElementoClicavel(10, btnLixeira);
 		//btnLixeira.click();
 
