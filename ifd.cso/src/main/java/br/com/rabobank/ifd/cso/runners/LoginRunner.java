@@ -1,4 +1,4 @@
-package br.com.rabobank.ifd.cso.runners.imoveisrurais.naoproprios;
+package br.com.rabobank.ifd.cso.runners;
 
 import java.io.File;
 
@@ -9,31 +9,28 @@ import org.junit.runner.RunWith;
 import com.vimalselvam.cucumber.listener.Reporter;
 
 import br.com.rabobank.ifd.cso.managers.FileReaderManager;
-import br.com.rabobank.ifd.cso.runners.RunnerSetup;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/features/"},
-				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.imoveisrurais"},
-				 //tags = {"@Inclusao_ImoveisNaoProprios_SemPreencherColunas"},
-				 tags = {"@Inclusao_ImoveisNaoProprios_ValorFixo"},
+@CucumberOptions(features = {"src/main/java/br/com/rabobank/ifd/cso/features/"},
+				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.comuns"},
+				 tags = {"@Logar1"},
                  plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
-public class InclusaoValorFixoRunner extends RunnerSetup{
+public class LoginRunner extends RunnerSetup{
+
 	
-	public InclusaoValorFixoRunner () {
-		super(br.com.rabobank.ifd.cso.runners.imoveisrurais.naoproprios.InclusaoValorFixoRunner.class);
+	public LoginRunner() {
+		super(br.com.rabobank.ifd.cso.runners.LoginRunner.class);
 	}
 	
 	@BeforeClass
 	public static void setUp() {		
-		new InclusaoValorFixoRunner();
+		new LoginRunner();
 	}
 	
 	@AfterClass
 	public static void writeExtentReport() {
 		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
 	}
-
-
 }
