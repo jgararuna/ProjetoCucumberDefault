@@ -18,6 +18,7 @@ public class TelaGeralObject extends TelaGeralPage{
 		
 		espera.verificarElementoExiste(10, btnInfPatrimoniais);
 		btnInfPatrimoniais.click();
+		espera.verificarLoadDesaparecer(10);
 		
 	}
 
