@@ -47,7 +47,5 @@ public class TelaLoginObject extends TelaLoginPage{
 		espera.verificarElementoExiste(10, btnInfPatrimoniais);
 
 	}
-	
-	
 
 }
