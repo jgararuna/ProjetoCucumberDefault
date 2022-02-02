@@ -1,7 +1,10 @@
 package br.com.rabobank.ifd.cso.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -9,18 +12,17 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 public class TelaImoveisRuraisPage {
 
 	protected WebDriver driver;
-//	private ScrollUtils scroll;
-//	private TempoEsperaUtils espera;
 
 	public TelaImoveisRuraisPage(WebDriver driver) {
 		this.driver = driver;
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 20);
 		PageFactory.initElements(factory, this);
-//		scroll = new ScrollUtils(driver);
-//		espera = new TempoEsperaUtils();
 		
 	}
 
+	/*	
+		Localizadores da tela de listagem
+	*/
 	@FindBy(xpath = "//*[@id=\"login\"]")
 	protected WebElement cmpLogin;
 
@@ -75,107 +77,108 @@ public class TelaImoveisRuraisPage {
 	@FindBy(xpath = "//*[@id=\"lupa\"]")
 	protected WebElement btnLupa;
 	
-	// Não proprios
+	@FindBy(id = "btn_adicionar_nao_imovel_proprio")
+	protected WebElement btnIncluirNaoProprio;
 	
+	/*	
+		Localizadores da tela de inclusão de imóveis não próprios
+	*/	
+	@FindBy(id = "matricula")
+	protected WebElement cmpMatricula;
 	
+	@FindBy(xpath = "//div[@class='matriculaStyle input-w-sm matriculaBg']/i")
+	protected WebElement addMatricula;
 	
+	@FindBy(id = "nomeImovel")
+	protected WebElement cmpNomeImovel;
 	
+	@FindBy(id = "areaUtil")
+	protected WebElement cmpAreaUtil;
 	
+	@FindBy(id = "selectUf")
+	protected WebElement cbxUf;
 	
+	@FindBy(id = "selectCidade")
+	protected WebElement cbxCidade;
 	
+	@FindBy(id = "vencContrato")
+	protected WebElement cmpVencimento;
+	
+	@FindBy(id = "radioAtual")
+	protected WebElement chkBtnValorFixoAtual;
 
-//	// métodos
-//
-//	public void logarNoSiteIFD() throws InterruptedException {
-//		cmpLogin.click();
-//		cmpLogin.sendKeys("rabobank");
-//		
-//		cmpSenha.click();
-//		cmpSenha.sendKeys("rabobank1");
-//
-//		btnEntrar.click();
-//		espera.sleep(3000);
-//	}
-//
-//	public void clicarInformacoesPatrimoniais() {
-//		btnInfPatrimoniais.click();
-//	}
-//
-//	public void clicarAbaImoveisRurais() throws InterruptedException {
-//		espera.sleep(4000);
-//		btnAbaImoveisRurais.click();
-//	}
-//
-//	public void clicarNaoProprios() throws InterruptedException {
-//		scroll.scrollPosicao(200);
-//		btnNaoProprios.click();
-//		espera.sleep(2000);
-//	}
-//	
-//	public void clicarProprios() throws InterruptedException {
-//		scroll.scrollPosicao(250);
-//		btnProprios.click();
-//		espera.sleep(2000);
-//	}
-//
-//	public void clicarIconeLixeira() throws InterruptedException {
-//		scroll.scrollPosicao(200);
-//		espera.sleep(4000);
-//		btnIconeLixeira.click();
-//		espera.sleep(4000);
-//
-//	}
-//
-//	public void clicarDeletar() throws InterruptedException {
-//		espera.sleep(2000);
-//		btnDeletar.click();
-//		espera.sleep(6000);
-//	}
-//
-//	public void clicarCancelar() throws InterruptedException {
-//		btnCancelar.click();
-//		espera.sleep(2000);
-//	}
-//
-//	public void fecharJanelaDeletar() throws InterruptedException {
-//		btnFecharDeletar.click();
-//		espera.sleep(4000);
-//	}
-//
-//	public void clicarFiltro() {
-//		cmpFiltro.click();
-//	}
-//
-//	public void selecionarDenominacao() {
-//		lblDenominacao.click();
-//		scroll.scrollPosicao(100);		
-//	}
-//
-//	public void selecionarCidade() {
-//		lblCidade.click();
-//		scroll.scrollPosicao(100);		
-//	}
-//
-//	public void selecionarUF() {
-//		lblUF.click();
-//		scroll.scrollPosicao(100);		
-//	}
-//
-//	public void selecionarComarca() {
-//		lblComarca.click();
-//		scroll.scrollPosicao(100);		
-//	}
-//
-//	public void preencherPesquisa(String pesquisa) throws InterruptedException {
-//		cmpPesquisar.click();
-//		cmpPesquisar.sendKeys(pesquisa);
-//		espera.sleep(2000);
-//	}
-//	
-//	public void clicarLupa() throws InterruptedException {
-//		espera.sleep(2000);
-//		scroll.scrollPosicao(100);		
-//		btnLupa.click();
-//		espera.sleep(6000);
-//	}
+	@FindBy(id = "radioAtualContrato")
+	protected WebElement chkBtnContratoAtual;
+	
+	@FindBy(id = "cursoHaAtual")
+	protected WebElement cmpCustoAtual;
+	
+	@FindBy(id = "kgHaAtual")
+	protected WebElement cmpKgAtual;
+	
+	@FindBy(id = "valorTotalAtual")
+	protected WebElement cmpValorTotalAtual;
+	
+	@FindBy(id = "selectPeriodoAtual")
+	protected WebElement cbxPeriodoAtual;
+	
+	@FindBy(id = "valorAtual")
+	protected WebElement cmpValorAtual;
+	
+	@FindBy(id = "btnDistribAtual")
+	protected WebElement btnDistribAtual;
+	
+	@FindBy(id = "radioValorFixoAno1")
+	protected WebElement chkBtnValorFixoAno1;
+
+	@FindBy(id = "radioContratoAno1")
+	protected WebElement chkBtnContratoAno1;
+	
+	@FindBy(id = "custoHaAno1")
+	protected WebElement cmpCustoAno1;
+	
+	@FindBy(id = "kgHaAno1")
+	protected WebElement cmpKgAno1;
+	
+	@FindBy(id = "valorTotalAno1")
+	protected WebElement cmpValorTotalAno1;
+	
+	@FindBy(id = "periodoAno1Select")
+	protected WebElement cbxPeriodoAno1;
+	
+	@FindBy(id = "valorPeriodoAno1")
+	protected WebElement cmpValorAno1;
+	
+	@FindBy(id = "btnDistribAno1")
+	protected WebElement btnDistribAno1;
+	
+	@FindBy(id = "radioValorFixoProjecao")
+	protected WebElement chkBtnValorFixoProjecao;
+
+	@FindBy(id = "radioContratoProjecao")
+	protected WebElement chkBtnContratoProjecao;
+	
+	@FindBy(id = "custoHaProjecao")
+	protected WebElement cmpCustoProjecao;
+	
+	@FindBy(id = "kgHaProjecao")
+	protected WebElement cmpKgProjecao;
+	
+	//@FindAll(@FindBy(id = "icone_editar"))
+	@FindAll(@FindBy(xpath = "//tr[6]/td[3]/div/div[4]/div[3]/div//div[4]/i[1]"))
+	//@FindBy(xpath = "//tr[6]/td[3]/div/div[4]/div[3]/div/")
+	protected List<WebElement> btnsEditarProjecao;
+	
+	@FindBy(xpath = "//td[3]/div/div[4]/div[1]/button[@id=\"btnDistribAtual\"]")
+	protected WebElement btnDistribProjecao;
+	
+	@FindBy(id = "selectMercadoria")
+	protected WebElement cbxMercadoria;
+	
+	@FindBy(id = "kgHaProjecao")
+	protected WebElement cmpJustificativa;
+	//*[@id="pills-properties"]/app-rural-properties/div/div[2]/app-rural-properties-list/div[2]/table/tbody/app-form-not-own/table/thead/tr[7]/td[3]/button
+	@FindBy(xpath = "//button[text()=' Salvar ']")
+	protected WebElement btnSalvar;
+	
 }
