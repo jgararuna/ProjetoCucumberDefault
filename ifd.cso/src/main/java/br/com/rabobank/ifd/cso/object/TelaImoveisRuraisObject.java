@@ -17,6 +17,7 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	private ComboboxUtils comboboxUtils = new ComboboxUtils(driver);
 	private ConvertUtils convertUtils = new ConvertUtils();
 	private CheckboxUtils checkboxUtils = new CheckboxUtils();
+	private ScrollUtils scrollUtils = new ScrollUtils(driver);
 	
 	public TelaImoveisRuraisObject(WebDriver driver) {
 		super(driver);
@@ -264,15 +265,20 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	public void preencherColunaProjecaoContrato() {
 		
 		int i = 0, numeroBtnsEdicao = btnsEditarProjecao.size();
-
+		scrollUtils.scrollPosicao(-300);
+		
 		while(i < numeroBtnsEdicao){
+			
+//			if(i==0) {
+//				
+//			}
 			
 			btnsEditarProjecao.get(i).click();
 			if(!chkBtnContratoProjecao.isSelected()) {
 				chkBtnContratoProjecao.click();
 			}
 			
-			cmpCustoProjecao.sendKeys("100");
+			cmpKgProjecao.sendKeys("100");
 			btnDistribProjecao.click();
 			i++;
 			
