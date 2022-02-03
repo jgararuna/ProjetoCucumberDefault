@@ -197,8 +197,7 @@ public class TelaImoveisRuraisStep{
 	
 	@Quando("^preencho o campo Kg/Ha e distribuo todos os períodos disponíveis para contrato na coluna projeção$")
 	public void preencho_o_campo_Kg_Ha_e_distribuo_todos_os_períodos_disponíveis_para_contrato_na_coluna_projeção() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    telaImoveisRuraisObject.preencherColunaProjecaoContrato();
 	}
 	
 	@E("^ciclo no botão Salvar$")
