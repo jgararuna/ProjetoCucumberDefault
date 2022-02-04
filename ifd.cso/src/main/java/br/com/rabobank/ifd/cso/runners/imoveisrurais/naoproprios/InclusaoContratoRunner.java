@@ -16,23 +16,24 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/features/"},
 				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.imoveisrurais"},
-				 tags = {"@Inclusao_ImoveisNaoProprios_SemPreencherColunas"},
+				 //tags = {"@Inclusao_ImoveisNaoProprios_SemPreencherColunas"},
+				 tags = {"@Inclusao_ImoveisNaoProprios_Contrato"},
                  plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
-public class InclusaoRunner extends RunnerSetup{
-	
-	public InclusaoRunner () {
-		super(br.com.rabobank.ifd.cso.runners.imoveisrurais.naoproprios.InclusaoRunner.class);
+public class InclusaoContratoRunner extends RunnerSetup{
+
+	public InclusaoContratoRunner(Class<?> clazz) {
+		super(clazz);
+		// TODO Auto-generated constructor stub
 	}
 	
 	@BeforeClass
-	public static void setUp() {		
-		new InclusaoRunner();
+	public static void setup() {
+		new InclusaoContratoRunner(br.com.rabobank.ifd.cso.runners.imoveisrurais.naoproprios.InclusaoValorFixoRunner.class);
 	}
 	
 	@AfterClass
 	public static void writeExtentReport() {
 		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
 	}
-
 
 }

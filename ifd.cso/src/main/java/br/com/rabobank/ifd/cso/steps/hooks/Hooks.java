@@ -1,5 +1,6 @@
 package br.com.rabobank.ifd.cso.steps.hooks;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import org.junit.BeforeClass;
@@ -33,7 +34,7 @@ public class Hooks {
 	//private TelaLoginStep telaLoginStep;
 
 	public Hooks(TestContextUtils context) {
-		System.out.println("antes do teste1");
+		//System.out.println("antes do teste1");
 		ttestContext = context;
 		configLeitorDeArquivos = new ConfigFileReader();
 		screenshot = new ScreenshotUtils(context);
@@ -44,7 +45,7 @@ public class Hooks {
 	public void BeforeSteps() {
 		ttestContext.getWebDriverManager().startBrowser();
 		ttestContext.getWebDriverManager().getUrl(configLeitorDeArquivos.getUrl());
-		System.out.println("antes do teste");
+		//System.out.println("antes do teste");
 		
 	}
 	
@@ -74,6 +75,12 @@ public class Hooks {
 	@After(order = 0)
 	public void AfterSteps() {
 		ttestContext.getWebDriverManager().quitDriver();
+		try {
+			Runtime.getRuntime().exec("taskkill /F /IM ChromeDriver.exe");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

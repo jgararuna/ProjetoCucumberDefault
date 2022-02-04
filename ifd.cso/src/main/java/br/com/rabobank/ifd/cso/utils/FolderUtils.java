@@ -133,27 +133,27 @@ public class FolderUtils {
 		
 	}
 	
-	public void createReportFolder3(Object clazz) {
-		
-		CucumberUtils cucumberUtils = new CucumberUtils();
-		String reportName = cucumberUtils.getTagsFromAnnotations2(clazz);
-			
-		ExtentReports er = new ExtentReports();
-		try {
-			er.setGherkinDialect("pt");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		Date now = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm");
-		String time = dateFormat.format(now);
-		
-		ExtentProperties extentProperties = ExtentProperties.INSTANCE;	
-		extentProperties.setReportPath("target/cucumber-reports/" + reportName + " " + time + "/report.html");
-		
-	}
+//	public void createReportFolder3(Object clazz) {
+//		
+//		CucumberUtils cucumberUtils = new CucumberUtils();
+//		String reportName = cucumberUtils.getTagsFromAnnotations2(clazz);
+//			
+//		ExtentReports er = new ExtentReports();
+//		try {
+//			er.setGherkinDialect("pt");
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		Date now = new Date();
+//		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm");
+//		String time = dateFormat.format(now);
+//		
+//		ExtentProperties extentProperties = ExtentProperties.INSTANCE;	
+//		extentProperties.setReportPath("target/cucumber-reports/" + reportName + " " + time + "/report.html");
+//		
+//	}
 	
 	public void renameReportFolder(String reportName) {
 	//public void renameReportFolder() {
@@ -249,7 +249,7 @@ public class FolderUtils {
 		File mostRecent = null;
 		if (mostRecentFolder.isPresent()) {
 		    mostRecent = mostRecentFileOrFolder.get();
-		    System.out.println("most recent is " + mostRecent.getPath());
+		    //System.out.println("most recent is " + mostRecent.getPath());
 		} else {
 		    System.out.println("folder is empty!");
 		}	

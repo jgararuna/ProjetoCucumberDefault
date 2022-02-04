@@ -1,5 +1,7 @@
 package br.com.rabobank.ifd.cso.utils;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -27,6 +29,18 @@ public class TempoEsperaUtils{
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, tempoEsperaSegundos);
 			wait.until(ExpectedConditions.visibilityOf(element));
+			return true;
+		}catch (Exception e) {
+			return false;
+		}
+		
+	}
+	
+	public boolean verificarElementosExistem(int tempoEsperaSegundos, List<WebElement> btnEditarProjecao) {
+		
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, tempoEsperaSegundos);
+			wait.until(ExpectedConditions.visibilityOfAllElements(btnEditarProjecao));
 			return true;
 		}catch (Exception e) {
 			return false;

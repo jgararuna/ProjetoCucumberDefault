@@ -28,5 +28,16 @@ public class ListWebElementUtils {
 		
 	}
 	
+//	public <T> List<T> listOfWebElementsSameId(String id){
+//		
+//	    List<WebElement> list = driver.findElements(By.id(id));
+//	    for (WebElement e  : list) {
+//	        System.out.println(e.getText());
+//	    }
+//	    
+//		return (List<T>) list;
+//		
+//	}
+	
 
 }
