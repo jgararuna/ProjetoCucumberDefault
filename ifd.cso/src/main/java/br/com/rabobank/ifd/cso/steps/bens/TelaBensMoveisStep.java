@@ -8,6 +8,7 @@ import com.vimalselvam.cucumber.listener.Reporter;
 import br.com.rabobank.ifd.cso.object.TelaBensMoveisObject;
 import br.com.rabobank.ifd.cso.object.TelaGeralObject;
 import br.com.rabobank.ifd.cso.object.TelaLoginObject;
+import br.com.rabobank.ifd.cso.object.TelaSemoventesObject;
 import br.com.rabobank.ifd.cso.steps.comuns.TelaGeralStep;
 import br.com.rabobank.ifd.cso.steps.comuns.TelaLoginStep;
 import br.com.rabobank.ifd.cso.utils.ScreenshotUtils;
@@ -67,13 +68,39 @@ public class TelaBensMoveisStep{
 
 	@E("^clico em Deletar na popup de confirmacao de exclusao$")
 	public void clico_em_Deletar_na_popup_de_confirmacao_de_exclusao() throws Throwable {
-//	    telaBensMoveisObject.clicarDeletar();
+	    telaBensMoveisObject.clicarDeletar();
 	}
 
 	@Entao("^o item será removido da lista de bens moveis$")
 	public void o_item_será_removido_da_lista_de_bens_moveis() throws Throwable {		
 		Assert.assertTrue("O item não foi removido da lista!", telaBensMoveisObject.confirmarExclusao());
 		screenshot.getScreenshot("Lista_DepoisExclusao");
+	}
+	
+	@Quando("^clico no botao Adicionar bens moveis$")
+	public void clico_no_botao_Adicionar_bens_moveis() throws Throwable {
+	 telaBensMoveisObject.clicarAdicionarBensMoveis();
+	}
+
+	@Quando("^preencho campo Descricao Item$")
+	public void preencho_campo_Descricao_Item() throws Throwable {
+	    telaBensMoveisObject.preencherDescricao();
+	}
+
+	@Quando("^preencho campo Quantidade$")
+	public void preencho_campo_Quantidade() throws Throwable {
+	    telaBensMoveisObject.preencherQuantidade();
+	}
+
+	@Quando("^preencho campo Valor Unitario$")
+	public void preencho_campo_Valor_Unitario() throws Throwable {
+	    telaBensMoveisObject.preencherValorUnitario();
+	}
+
+	@Entao("^a inclusao sera concluida com sucesso$")
+	public void a_inclusao_sera_concluida_com_sucesso() throws Throwable {
+		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
+		screenshot.getScreenshot("Lista_DepoisInclusao");
 	}
 	
 	
