@@ -3,10 +3,10 @@
 @Exclusao
 Funcionalidade: Validar a exclusão de bem móvel
 
+
 	Contexto:
 		Dado que faco login no site
 		Quando clico no botao de informacoes patrimoniais
-
 	
 	@Exclusao_BemMovel
 	Cenario: CT001 - Validar a exclusao de bem movel	

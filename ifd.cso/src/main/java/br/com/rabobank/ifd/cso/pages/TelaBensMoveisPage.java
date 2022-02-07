@@ -16,17 +16,17 @@ public class TelaBensMoveisPage {
 		PageFactory.initElements(factory, this);	
 	}
 	
-	@FindBy(xpath = "//*[@id=\"login\"]")
-	protected WebElement cmpLogin;
-
-	@FindBy(xpath = "//*[@id=\"senha\"]")
-	protected WebElement cmpSenha;
-
-	@FindBy(xpath = "//*[@id=\"entrar\"]")
-	protected WebElement btnEntrar;
-
-	@FindBy(xpath = "//*[@id=\"informacoes_patrimoniais\"]")
-	protected WebElement btnInfPatrimoniais;
+//	@FindBy(xpath = "//*[@id=\"login\"]")
+//	protected WebElement cmpLogin;
+//
+//	@FindBy(xpath = "//*[@id=\"senha\"]")
+//	protected WebElement cmpSenha;
+//
+//	@FindBy(xpath = "//*[@id=\"entrar\"]")
+//	protected WebElement btnEntrar;
+//
+//	@FindBy(xpath = "//*[@id=\"informacoes_patrimoniais\"]")
+//	protected WebElement btnInfPatrimoniais;
 
 	@FindBy(xpath = "//*[@id=\"pills-assets-tab\"]")
 	protected WebElement btnAbaBensMoveisImoveis;
@@ -55,4 +55,19 @@ public class TelaBensMoveisPage {
 	@FindBy(id = "moveis")
 	protected WebElement btnMoveis;
 	
+	@FindBy(id = "btn_adicionar_bens_moveis")
+	protected WebElement btnAdicionarBemMovel;
+	
+	@FindBy(id = "descrcaoItem")
+	protected WebElement cmpDescricaoItem;
+	
+	@FindBy(xpath = "//*[id=\"quantidade\"]")
+	protected WebElement cmpQuantidade;
+	
+	@FindBy(xpath = "//*[id=\"valorUnitario\"]")
+	protected WebElement cmpValorUnitario;
+
+	@FindBy(xpath = "//*[id=\"salvar\"]")
+	protected WebElement cmpSalvar;	
+
 }
