@@ -10,5 +10,21 @@ public class WebElementDataUtils {
 		return text;
 
 	}
+	
+	public int getMaxlengthElement(WebElement element) {
+		
+		int length = 0;
+		
+		try {
+			length = Integer.valueOf(element.getAttribute("maxlength"));
+		} catch (NumberFormatException e) {
+			length = element.getAttribute("mask").length();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+		return length;
+		
+	}
 
 }
