@@ -61,10 +61,10 @@ public class TelaBensMoveisPage {
 	@FindBy(id = "descrcaoItem")
 	protected WebElement cmpDescricaoItem;
 	
-	@FindBy(xpath = "//*[id=\"quantidade\"]")
+	@FindBy(id = "quantidade")
 	protected WebElement cmpQuantidade;
 	
-	@FindBy(xpath = "//*[id=\"valorUnitario\"]")
+	@FindBy(id = "valorUnitario")
 	protected WebElement cmpValorUnitario;
 
 	@FindBy(xpath = "//*[id=\"salvar\"]")

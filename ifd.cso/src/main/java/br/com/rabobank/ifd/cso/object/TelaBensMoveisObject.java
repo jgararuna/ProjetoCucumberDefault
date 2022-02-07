@@ -98,20 +98,23 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 	public void clicarAdicionarBensMoveis() {
 		espera.verificarElementoClicavel(10, btnAdicionarBemMovel);
 		btnAdicionarBemMovel.click();
+		scroll.scrollPosicao(250);
 	}
 
 	public void preencherDescricao() {
-		scroll.scrollElement(cmpDescricaoItem);
+		scroll.scrollPosicao(250);
 		cmpDescricaoItem.click();
 		cmpDescricaoItem.sendKeys("Descrição Teste");
 	}
 
 	public void preencherQuantidade() {
+		espera.verificarElementoClicavel(10, cmpQuantidade);
 		cmpQuantidade.click();
 		cmpQuantidade.sendKeys("100");
 	}
 
 	public void preencherValorUnitario() {
+		espera.verificarElementoClicavel(10, cmpValorUnitario);
 		cmpValorUnitario.click();
 		cmpValorUnitario.sendKeys("100");
 	}
