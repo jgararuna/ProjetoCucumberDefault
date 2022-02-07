@@ -38,15 +38,23 @@ public class ExclusaoRunner extends RunnerSetup{
 	
 	//ExclusaoRunner ex = new ExclusaoRunner();
 
-	public ExclusaoRunner () {
-		super(br.com.rabobank.ifd.cso.runners.bens.moveis.ExclusaoRunner.class);
+//	public ExclusaoRunner () {
+//		super(br.com.rabobank.ifd.cso.runners.bens.moveis.ExclusaoRunner.class);
+//	}
+	
+	public ExclusaoRunner(Class<?> clazz) {
+		super(clazz);
+		// TODO Auto-generated constructor stub
 	}
+	
 	
 	@BeforeClass
 	public static void setUp() {		
-		new ExclusaoRunner();
+		new ExclusaoRunner(br.com.rabobank.ifd.cso.runners.bens.moveis.ExclusaoRunner.class);
 	}
 	
+
+
 	@AfterClass
 	public static void writeExtentReport() {
 		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
