@@ -11,7 +11,7 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 
 	private TempoEsperaUtils espera = new TempoEsperaUtils(driver);
 	private ListWebElementUtils listWebElementUtils = new ListWebElementUtils();
-	private ScrollUtils scroll;
+	private ScrollUtils scroll = new ScrollUtils(driver);
 	int numItensAntes;
 
 	public TelaBensMoveisObject(WebDriver driver) {
@@ -45,8 +45,6 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 		espera.verificarLoadDesaparecer(10);
 		btnAbaBensMoveisImoveis.click();
 		espera.verificarLoadDesaparecer(10);
-		btnAdd.click();
-		new ScrollUtils(driver).scrollElement(desc);
 	
 	}
 
@@ -100,10 +98,10 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 	public void clicarAdicionarBensMoveis() {
 		espera.verificarElementoClicavel(10, btnAdicionarBemMovel);
 		btnAdicionarBemMovel.click();
-		scroll.scrollElement(cmpDescricaoItem);
 	}
 
 	public void preencherDescricao() {
+		scroll.scrollElement(cmpDescricaoItem);
 		cmpDescricaoItem.click();
 		cmpDescricaoItem.sendKeys("Descrição Teste");
 	}
