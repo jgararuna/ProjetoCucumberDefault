@@ -56,7 +56,8 @@ public class TelaBensMoveisStep{
 
 	@E("^clico na aba de Bens Moveis/Imoveis$")
 	public void clico_na_aba_de_imoveis_rurais() throws Throwable {
-		telaBensMoveisObject.clicarAbaBensMoveisImoveis();		
+		telaBensMoveisObject.clicarAbaBensMoveisImoveis();
+		//screenshot.getScreenshot("add");
 	}
 	
 	@E("^clico na lixeira do primeiro item da lista de bens moveis$")
@@ -67,7 +68,7 @@ public class TelaBensMoveisStep{
 
 	@E("^clico em Deletar na popup de confirmacao de exclusao$")
 	public void clico_em_Deletar_na_popup_de_confirmacao_de_exclusao() throws Throwable {
-//	    telaBensMoveisObject.clicarDeletar();
+	    telaBensMoveisObject.clicarDeletar();
 	}
 
 	@Entao("^o item será removido da lista de bens moveis$")
