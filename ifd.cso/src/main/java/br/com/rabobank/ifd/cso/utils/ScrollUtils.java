@@ -3,6 +3,7 @@ package br.com.rabobank.ifd.cso.utils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class ScrollUtils {
 	
@@ -19,7 +20,10 @@ public class ScrollUtils {
 	
 	// scroll to element
 	public void scrollElement(WebElement element) {
-		executeJs("arguments[0].scrollIntoView(true)", element);
+//		executeJs("arguments[0].scrollIntoView(true)", element);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element);
+		actions.perform();
 	}
 	
 	
