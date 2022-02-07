@@ -1,24 +1,15 @@
 package br.com.rabobank.ifd.cso.runners.bens.moveis;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.vimalselvam.cucumber.listener.ExtentProperties;
 import com.vimalselvam.cucumber.listener.Reporter;
 
 import br.com.rabobank.ifd.cso.managers.FileReaderManager;
-import br.com.rabobank.ifd.cso.runners.RunnerModel;
 import br.com.rabobank.ifd.cso.runners.RunnerSetup;
-import br.com.rabobank.ifd.cso.steps.comuns.TelaLoginStep;
-import br.com.rabobank.ifd.cso.steps.hooks.Hooks;
-import br.com.rabobank.ifd.cso.utils.FolderUtils;
-import br.com.rabobank.ifd.cso.utils.TestContextUtils;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
