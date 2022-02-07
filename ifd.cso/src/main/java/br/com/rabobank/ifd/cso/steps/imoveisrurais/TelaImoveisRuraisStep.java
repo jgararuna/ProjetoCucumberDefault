@@ -164,13 +164,13 @@ public class TelaImoveisRuraisStep{
 	
 	@Quando("^preencho o campo Custo\\(Ha\\) e distribuo todos os períodos disponíveis para valor fixo na coluna anoUm$")
 	public void preencho_o_campo_Custo_Ha_e_distribuo_todos_os_períodos_disponíveis_para_valor_fixo_na_coluna_anoUm() throws Throwable {
-//		telaImoveisRuraisObject.preencherColunaAtualAnoUmValorFixo("Ano 1");
-//		screenshot.getScreenshot("numbers2");
+		telaImoveisRuraisObject.preencherColunaAtualAnoUmValorFixo("Ano 1");
+		screenshot.getScreenshot("numbers2");
 	}
 	
 	@Quando("^preencho o campo Custo\\(Ha\\) e distribuo todos os períodos disponíveis para valor fixo na coluna projeção$")
 	public void preencho_o_campo_Custo_Ha_e_distribuo_todos_os_períodos_disponíveis_para_valor_fixo_na_coluna_projeção() throws Throwable {
-	    //telaImoveisRuraisObject.preencherColunaProjecaoValorFixo();
+	    telaImoveisRuraisObject.preencherColunaProjecaoValorFixo();
 	}
 	
 	/* Fluxos de inclusao para valor contrato */
