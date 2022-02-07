@@ -3,26 +3,15 @@ package br.com.rabobank.ifd.cso.steps.bens;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import com.vimalselvam.cucumber.listener.Reporter;
-
 import br.com.rabobank.ifd.cso.object.TelaBensMoveisObject;
-import br.com.rabobank.ifd.cso.object.TelaGeralObject;
-import br.com.rabobank.ifd.cso.object.TelaLoginObject;
-import br.com.rabobank.ifd.cso.object.TelaSemoventesObject;
 import br.com.rabobank.ifd.cso.steps.comuns.TelaGeralStep;
 import br.com.rabobank.ifd.cso.steps.comuns.TelaLoginStep;
 import br.com.rabobank.ifd.cso.utils.ScreenshotUtils;
 import br.com.rabobank.ifd.cso.utils.TestContextUtils;
-import cucumber.api.PendingException;
-import cucumber.api.Scenario;
-import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
-import cucumber.runtime.model.CucumberScenario;
-import gherkin.formatter.model.Feature;
-import gherkin.formatter.model.ScenarioOutline;
 
 public class TelaBensMoveisStep{
 	
@@ -99,8 +88,8 @@ public class TelaBensMoveisStep{
 
 	@Entao("^a inclusao sera concluida com sucesso$")
 	public void a_inclusao_sera_concluida_com_sucesso() throws Throwable {
-		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
-		screenshot.getScreenshot("Lista_DepoisInclusao");
+//		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
+//		screenshot.getScreenshot("Lista_DepoisInclusao");
 	}
 	
 	
