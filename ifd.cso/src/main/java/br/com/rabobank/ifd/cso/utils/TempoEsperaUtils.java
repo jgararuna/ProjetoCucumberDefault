@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -69,6 +70,25 @@ public class TempoEsperaUtils{
 			WebDriverWait wait = new WebDriverWait(driver, tempoEsperaSegundos);
 			wait.until(ExpectedConditions.invisibilityOf(load));
 		}catch (TimeoutException to) {
+			Reporter.addStepLog("A página demorou mais que " + tempoEsperaSegundos + " segundos para carregar.");
+			Assert.assertTrue(verificador);		
+		}	
+		
+	}
+	
+	public void verificarLoadAparecer(int tempoEsperaSegundos) {
+		
+		boolean verificador = false;
+		WebElement loadAppear = driver.findElement(By.xpath("/html/body/app-root/app-spinner"));
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, tempoEsperaSegundos);
+			wait.until(ExpectedConditions.visibilityOf(loadAppear));
+		}catch (StaleElementReferenceException to) {
+			WebElement loadAppear3 = driver.findElement(By.xpath("/html/body/app-root/app-spinner"));
+			WebDriverWait wait = new WebDriverWait(driver, tempoEsperaSegundos);
+			wait.until(ExpectedConditions.visibilityOf(loadAppear3));		
+		}
+		catch (TimeoutException to) {
 			Reporter.addStepLog("A página demorou mais que " + tempoEsperaSegundos + " segundos para carregar.");
 			Assert.assertTrue(verificador);		
 		}	
