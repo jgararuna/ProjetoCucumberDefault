@@ -47,7 +47,6 @@ public class TelaBensMoveisStep{
 	@E("^clico na aba de Bens Moveis/Imoveis$")
 	public void clico_na_aba_de_imoveis_rurais() throws Throwable {
 		telaBensMoveisObject.clicarAbaBensMoveisImoveis();
-		//screenshot.getScreenshot("add");
 	}
 	
 	@E("^clico na lixeira do primeiro item da lista de bens moveis$")
