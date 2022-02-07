@@ -1,5 +1,9 @@
 package br.com.rabobank.ifd.cso.object;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -7,8 +11,10 @@ import br.com.rabobank.ifd.cso.pages.TelaImoveisRuraisPage;
 import br.com.rabobank.ifd.cso.utils.CheckboxUtils;
 import br.com.rabobank.ifd.cso.utils.ComboboxUtils;
 import br.com.rabobank.ifd.cso.utils.ConvertUtils;
+import br.com.rabobank.ifd.cso.utils.RandomUtils;
 import br.com.rabobank.ifd.cso.utils.ScrollUtils;
 import br.com.rabobank.ifd.cso.utils.TempoEsperaUtils;
+import br.com.rabobank.ifd.cso.utils.WebElementDataUtils;
 
 public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	
@@ -18,6 +24,8 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	private ConvertUtils convertUtils = new ConvertUtils();
 	private CheckboxUtils checkboxUtils = new CheckboxUtils();
 	private ScrollUtils scrollUtils = new ScrollUtils(driver);
+	private WebElementDataUtils webElementDataUtils = new WebElementDataUtils();
+	private RandomUtils randomUtils = new RandomUtils();
 	
 	public TelaImoveisRuraisObject(WebDriver driver) {
 		super(driver);
@@ -146,12 +154,12 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	}
 	
 	public void preencherCamposObrigatorios() {
-		
+		System.out.println("hey");
 		espera.verificarElementosExistem(10, btnsEditarProjecao);
-		cmpMatricula.sendKeys("123");
+		cmpMatricula.sendKeys(randomUtils.generateStringOfLongRandomNumber(webElementDataUtils.getMaxlengthElement(cmpMatricula)));
 		addMatricula.click();
 		cmpNomeImovel.sendKeys("Nome Imovel Nao Proprio");
-		cmpAreaUtil.sendKeys("100");
+		cmpAreaUtil.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(webElementDataUtils.getMaxlengthElement(cmpAreaUtil)));
 		comboboxUtils.selecionarOpcaoComboBoxByText(cbxUf, "MG");
 		//comboboxUtils.selecionarOpcaoComboBoxByPosition(cbxUf, 1);
 		espera.verificarLoadDesaparecer(10);
@@ -190,11 +198,32 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 		
 		int i = 1, tamanhoComboboxPeriodo = comboboxUtils.getComboboxSize(combobox) - 1;
 		cmpCusto.sendKeys(convertUtils.convertInttoString(tamanhoComboboxPeriodo));
+		//cmpCusto.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(webElementDataUtils.getMaxlengthElement(cmpCusto)));
+		cmpValorTotalAtual.click();
+		
+		NumberFormat nf = new DecimalFormat("#.00");
+		
+		double valorTotal = 0.00;
+		try {
+			valorTotal = nf.parse (cmpValorTotalAtual.getAttribute("value").replace("R$ ","").replace(".", "").replace(",", ".")).doubleValue();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("aqui1 " + valorTotal);
+		
+		double valor = 0.00;
+		try {
+			valor = nf.parse (String.valueOf(valorTotal/tamanhoComboboxPeriodo)).doubleValue();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		while(i <= tamanhoComboboxPeriodo){
 			
 			comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
-			cmpValor.sendKeys("100");
+			cmpValor.sendKeys(String.valueOf(valor).replace(".", ","));
 			btnDistribuir.click();
 			i++;
 			
@@ -227,7 +256,7 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	public void preencherMercadoria(String mercadoria) {
 		
 		comboboxUtils.selecionarOpcaoComboBoxByText(cbxMercadoria, mercadoria);
-		espera.verificarLoadDesaparecer(10);
+		espera.verificarLoadDesaparecer(15);
 		
 	}
 	
