@@ -46,10 +46,10 @@ public class TelaBensMoveisPage {
 	@FindBy(xpath = "//*[@id=\"pills-assets\"]/app-assets-properties/div/div[2]/app-assets-properties-list/div[2]/table/tbody/tr[1]/td[1]/div")
 	protected WebElement itemSelecionadoParaExclusao;
 	
-	@FindBy(xpath = "//*[id=\"btn_adicionar_imovel_proprio\"]")
-	protected WebElement btnAdicionarBensMoveis;
+	@FindBy(id = "btn_adicionar_bens_moveis")
+	protected WebElement btnAdicionarBemMovel;
 	
-	@FindBy(xpath = "//*[id=\"descrcaoItem\"]")
+	@FindBy(id = "descrcaoItem")
 	protected WebElement cmpDescricaoItem;
 	
 	@FindBy(xpath = "//*[id=\"quantidade\"]")
