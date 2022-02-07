@@ -14,9 +14,11 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/features/" }, glue = { "br.com.rabobank.ifd.cso.steps.hooks",
-		"br.com.rabobank.ifd.cso.steps.bens" }, tags = {
-				"@Inclusao_BemMovel" }, plugin = { "com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:" })
+@CucumberOptions(features = {"src/test/resources/features/"}, 
+				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.bens" }, 
+				 tags = {"@Inclusao_BemMovel"}, 
+				 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
+
 public class InclusaoRunner extends RunnerSetup {
 	// public class ExlusaoRunner extends Hooks{
 	// plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
