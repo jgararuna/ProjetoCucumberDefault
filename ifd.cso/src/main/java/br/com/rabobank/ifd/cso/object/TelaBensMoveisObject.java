@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ByIdOrName;
 
 import br.com.rabobank.ifd.cso.pages.TelaBensMoveisPage;
 import br.com.rabobank.ifd.cso.utils.ListWebElementUtils;
+import br.com.rabobank.ifd.cso.utils.ScrollUtils;
 import br.com.rabobank.ifd.cso.utils.TempoEsperaUtils;
 import junit.framework.AssertionFailedError;
 
@@ -53,6 +54,8 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage{
 		espera.verificarLoadDesaparecer(10);
 		btnAbaBensMoveisImoveis.click();
 		espera.verificarLoadDesaparecer(10);
+		btnAdd.click();
+		new ScrollUtils(driver).scrollElement(desc);
 		
 	}
 
@@ -60,26 +63,33 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage{
 		
 		
 //		espera.verificarLoadDesaparecer(10);
-		numItensAntes = listWebElementUtils.listChildOfWebElement(listaBensMoveis);
+		//numItensAntes = listWebElementUtils.listChildOfWebElement(listaBensMoveis);
+		//System.out.println(btnMoveis.getText());
+		numItensAntes = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+",""));
+		//System.out.println("kk " + numItensAntes);
 		espera.verificarElementoClicavel(10, btnLixeira);
-		//btnLixeira.click();
+		btnLixeira.click();
 
 	}
 	
 	public void clicarDeletar() {
 		
-//		espera.verificarElementoClicavel(10, btnDeletar);
-//		btnDeletar.click();
-//		espera.verificarLoadDesaparecer(10);
+		espera.verificarElementoClicavel(10, btnDeletar);
+		btnDeletar.click();
+		espera.verificarLoadDesaparecer(20);
+		espera.verificarLoadAparecer(20);
+		espera.verificarLoadDesaparecer(20);
 		
 	}
 	
 	public boolean confirmarExclusao() throws InterruptedException {
 		
 		//int numItensDepois = 2;
-		int numItensDepois = listWebElementUtils.listChildOfWebElement(listaBensMoveis);
+		//int numItensDepois = listWebElementUtils.listChildOfWebElement(listaBensMoveis);
+		int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+",""));
+		System.out.println("k " + numItensDepois);
 		boolean verify = false;
-		if(numItensAntes != numItensDepois) {
+		if(numItensAntes > numItensDepois) {
 			verify = true;			
 		}
 		
