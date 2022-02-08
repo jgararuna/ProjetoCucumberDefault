@@ -1,7 +1,7 @@
 #language: pt
 #coding:utf-8
 
-@Inclusao
+@InclusaoBensMoveis
 Funcionalidade: Validar a inclusao de bem movel
 
 	Contexto:
@@ -15,4 +15,5 @@ Funcionalidade: Validar a inclusao de bem movel
 		E preencho campo Descricao Item
 		E preencho campo Quantidade
 		E preencho campo Valor Unitario
+		E clico no botao salvar
 		Entao a inclusao sera concluida com sucesso

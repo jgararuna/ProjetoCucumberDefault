@@ -88,9 +88,43 @@ public class TelaBensMoveisStep{
 
 	@Entao("^a inclusao sera concluida com sucesso$")
 	public void a_inclusao_sera_concluida_com_sucesso() throws Throwable {
-//		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
-//		screenshot.getScreenshot("Lista_DepoisInclusao");
+		Assert.assertTrue("O item foi adicionado da lista!", telaBensMoveisObject.confirmarInclusao());
+		screenshot.getScreenshot("Lista_DepoisInclusao");
 	}
+	
+	
+	@Quando("^clico no icone do lapis$")
+	public void clico_no_icone_do_lapis() throws Throwable {
+	   telaBensMoveisObject.clicarIconeLapis();
+	}
+
+	@Quando("^altero campo Descricao Item$")
+	public void altero_campo_Descricao_Item() throws Throwable {
+	    telaBensMoveisObject.preencherDescricaoAlteracao();
+	}
+
+	@Entao("^a alteracao sera concluida com sucesso$")
+	public void a_alteracao_sera_concluida_com_sucesso() throws Throwable {
+		
+		Assert.assertTrue("O item foi alterado da lista!", telaBensMoveisObject.confirmarAlteracao());
+		screenshot.getScreenshot("Lista_DepoisAlteracao");   
+	}
+
+	@Quando("^altero campo Quantidade$")
+	public void altero_campo_Quantidade() throws Throwable {
+	   telaBensMoveisObject.preencherQuantidadeAlteracao();
+	}
+
+	@Quando("^altero campo Valor Unitario$")
+	public void altero_campo_Valor_Unitario() throws Throwable {
+	   telaBensMoveisObject.preencherValorUnitarioAlteracao();
+	}
+	
+	@Quando("^clico no botao salvar$")
+	public void clico_no_botao_salvar() throws Throwable {
+	   telaBensMoveisObject.clicarSalvar();
+	}
+
 	
 	
 

@@ -16,18 +16,18 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/features/"}, 
 				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.bens" }, 
-				 tags = {"@Inclusao_BemMovel"}, 
+				 tags = {"@AlteracaoValorUnitario_BemMovel"}, 
 				 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
 
-public class InclusaoRunner extends RunnerSetup {
+public class AlteracaoRunner extends RunnerSetup {
 
-	public InclusaoRunner() {
-		super(br.com.rabobank.ifd.cso.runners.bens.moveis.InclusaoRunner.class);
+	public AlteracaoRunner() {
+		super(br.com.rabobank.ifd.cso.runners.bens.moveis.AlteracaoRunner.class);
 	}
 
 	@BeforeClass
 	public static void setUp() {
-		new InclusaoRunner();
+		new AlteracaoRunner();
 	}
 
 	@AfterClass
