@@ -95,6 +95,16 @@ public class TempoEsperaUtils{
 		
 	}
 	
+	public void waitExplicito(int tempoEsperaSegundos) {
+		
+		try {
+			Thread.sleep(tempoEsperaSegundos * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 
 }
