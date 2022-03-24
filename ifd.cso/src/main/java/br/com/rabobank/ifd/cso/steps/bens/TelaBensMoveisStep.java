@@ -88,8 +88,8 @@ public class TelaBensMoveisStep{
 
 	@Entao("^a inclusao sera concluida com sucesso$")
 	public void a_inclusao_sera_concluida_com_sucesso() throws Throwable {
-//		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
-//		screenshot.getScreenshot("Lista_DepoisInclusao");
+		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
+		screenshot.getScreenshot("Lista_Depois_Exclusao");
 	}
 	
 	
