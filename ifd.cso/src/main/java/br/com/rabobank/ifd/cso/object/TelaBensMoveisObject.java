@@ -12,7 +12,7 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 	private TempoEsperaUtils espera = new TempoEsperaUtils(driver);
 	private ListWebElementUtils listWebElementUtils = new ListWebElementUtils();
 	private ScrollUtils scroll = new ScrollUtils(driver);
-	int numItensAntes;
+	int numItensAntes = 0;
 
 	public TelaBensMoveisObject(WebDriver driver) {
 		super(driver);
@@ -67,11 +67,6 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 		espera.verificarElementoClicavel(10, btnDeletar);
 		btnDeletar.click();
 		espera.verificarLoadDesaparecer(20);
-		espera.verificarLoadAparecer(20);
-		espera.verificarLoadDesaparecer(20);
-		
-
-
 //		espera.verificarElementoClicavel(10, btnDeletar);
 //		btnDeletar.click();
 //		espera.verificarLoadDesaparecer(10);
@@ -81,16 +76,10 @@ public class TelaBensMoveisObject extends TelaBensMoveisPage {
 
 	public boolean confirmarExclusao() throws InterruptedException {
 
-		
-		//int numItensDepois = 2;
-		//int numItensDepois = listWebElementUtils.listChildOfWebElement(listaBensMoveis);
 		int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+",""));
-		System.out.println("k " + numItensDepois);
 		boolean verify = false;
 		if(numItensAntes > numItensDepois) {
 			verify = true;			
-		// int numItensDepois = 2;
-
 		}
 		return verify;
 	}
