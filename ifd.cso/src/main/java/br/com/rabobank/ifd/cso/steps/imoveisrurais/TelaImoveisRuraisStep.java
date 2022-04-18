@@ -39,12 +39,18 @@ public class TelaImoveisRuraisStep{
 	
 	}
 	
+	/*
+	 * Método de login
+	 */
 	@Dado("^que faco login no site$")
 	public void faco_login_no_site() throws Throwable {
 		telaLoginStep.logar();
 		//telaImoveisRuraisObject.logarNoSiteIFD();
 	}
 
+	/*
+	 * Métodos de selecionar opções do menu
+	 */
 	@Quando("^clico no botao de informacoes patrimoniais$")
 	public void clico_no_botao_de_informacoes_patrimoniais() throws Throwable {
 		telaGeralStep.clico_no_botao_de_informacoes_patrimoniais();
@@ -53,7 +59,7 @@ public class TelaImoveisRuraisStep{
 
 	@Quando("^clico na aba de imoveis rurais$")
 	public void clico_na_aba_de_imoveis_rurais() throws Throwable {
-		telaImoveisRuraisObject.clicarAbaImoveisRurais();
+		//telaImoveisRuraisObject.clicarAbaImoveisRurais();
 		
 	}
 
@@ -64,28 +70,30 @@ public class TelaImoveisRuraisStep{
 
 	@Quando("^clico no botao proprios$")
 	public void clico_no_botao_proprios() throws Throwable {
-		telaImoveisRuraisObject.clicarProprios();
+		//telaImoveisRuraisObject.clicarProprios();
 	}
 	
-
+	/*
+	 * Métodos de exclusão
+	 */
 	@Quando("^clico no icone da lixeira$")
 	public void clico_no_icone_da_lixeira() throws Throwable {
-		telaImoveisRuraisObject.clicarIconeLixeira();
+		//telaImoveisRuraisObject.clicarIconeLixeira();
 	}
 
 	@Quando("^clico em Deletar$")
 	public void clico_em_Deletar() throws Throwable {
-		telaImoveisRuraisObject.clicarDeletar();
+		//telaImoveisRuraisObject.clicarDeletar();
 	}
 
 	@Quando("^clico em Cancelar$")
 	public void clico_em_Cancelar() throws Throwable {
-		telaImoveisRuraisObject.clicarCancelar();
+		//telaImoveisRuraisObject.clicarCancelar();
 	}
 
 	@Quando("^clico no X para fechar a janela$")
 	public void clico_no_X_para_fechar_a_janela() throws Throwable {
-		telaImoveisRuraisObject.fecharJanelaDeletar();
+		//telaImoveisRuraisObject.fecharJanelaDeletar();
 	}
 
 	@Entao("^imovel nao proprio sera deletado com sucesso$")
@@ -98,9 +106,12 @@ public class TelaImoveisRuraisStep{
 		screenshot.getScreenshot("Excluir_NaoProprio");
 	}
 	
+	/*
+	 * Métodos de pesquisa
+	 */
 	@Quando("^clico na denominacao$")
 	public void clico_na_denominacao() throws Throwable {
-		telaImoveisRuraisObject.selecionarDenominacao();
+		//telaImoveisRuraisObject.selecionarDenominacao();
 	}
 
 	@Quando("^clico em UF$")
@@ -115,17 +126,17 @@ public class TelaImoveisRuraisStep{
 	
 	@Quando("^clico na comarca$")
 	public void clico_na_comarca() throws Throwable {
-		telaImoveisRuraisObject.selecionarComarca();
+		//telaImoveisRuraisObject.selecionarComarca();
 	}
 
 	@Quando("^preencho o campo \"([^\"]*)\"$")
 	public void preencho_o_campo(String pesquisar) throws Throwable {
-		telaImoveisRuraisObject.preencherPesquisa(pesquisar);
+		//telaImoveisRuraisObject.preencherPesquisa(pesquisar);
 	}
 
 	@Quando("^clico na lupa$")
 	public void clico_na_lupa() throws Throwable {
-		telaImoveisRuraisObject.clicarLupa();
+		//telaImoveisRuraisObject.clicarLupa();
 	}
 
 	@Entao("^imovel nao proprio aparecera de acordo com a consulta$")
@@ -140,7 +151,9 @@ public class TelaImoveisRuraisStep{
 		
 	}
 	
-	/* Fluxos de inclusao */
+	/*
+	 * Métodos de inclusão
+	 */
 	@Quando("^clico no botão de incluir imovel nao proprio$")
 	public void clico_no_botão_de_incluir_imovel_nao_proprio() throws Throwable {
 		screenshot.getScreenshot("Lista_AntesInclusao");
@@ -211,5 +224,56 @@ public class TelaImoveisRuraisStep{
 	}
 	
 	
+	/*
+	 * Métodos de alteração
+	*/
+	@Quando("^pesquiso pela proposta que desejo alterar$")
+	public void pesquiso_pela_proposta_que_desejo_alterar() throws Throwable {
+		screenshot.getScreenshot("Lista_AntesAlteracao");
+		Assert.assertTrue("A pesquisa não restornou nenhuma proposta", telaImoveisRuraisObject.pesquisarProposta("Teste Alteração(Não excluir)"));
+		screenshot.getScreenshot("Retorno_Pesquisa");
+	}
+
+	@Quando("^clico no botão de alterar imovel nao proprio$")
+	public void clico_no_botão_de_alterar_imovel_nao_proprio() throws Throwable {
+	    telaImoveisRuraisObject.clicarAlterar();
+	}
+
+	@Quando("^altero os dados obrigatórios de cadastro$")
+	public void altero_os_dados_obrigatórios_de_cadastro() throws Throwable {
+	   telaImoveisRuraisObject.alterarDadosCdastrais();
+	}
+	
+	@Quando("^excluo todas as distribuições$")
+	public void excluo_todas_as_distribuições() throws Throwable {
+	    telaImoveisRuraisObject.excluirDistribuicoes();
+	}
+
+	@Quando("^altero a colonua Atual$")
+	public void altero_a_colonua_Atual() throws Throwable {
+	    telaImoveisRuraisObject.alterarColunaAtualAno1("Atual");
+	}
+
+	@Quando("^altero a coluna Ano Um$")
+	public void altero_a_coluna_Ano_Um() throws Throwable {
+		telaImoveisRuraisObject.alterarColunaAtualAno1("Ano 1");
+		screenshot.getScreenshot("screen");
+	}
+
+	@Quando("^altero as projeções$")
+	public void altero_as_projeções() throws Throwable {
+	    telaImoveisRuraisObject.alterarColunaProjecao();
+	}
+
+	@Quando("^clico no botão de salvar$")
+	public void clico_no_botão_de_salvar() throws Throwable {
+	    telaImoveisRuraisObject.clicarBotaoSalvar();
+	}
+
+	@Entao("^o sistema conclui a alteração$")
+	public void o_sistema_conclui_a_alteração() throws Throwable {
+		Assert.assertTrue("Ocorreu um erro na alteração.", telaImoveisRuraisObject.confirmarAlteracao());
+		screenshot.getScreenshot("Lista_DepoisAlteracao");
+	}
 
 }
