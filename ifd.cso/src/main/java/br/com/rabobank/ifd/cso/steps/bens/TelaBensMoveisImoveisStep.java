@@ -94,7 +94,6 @@ public class TelaBensMoveisImoveisStep{
 
 	@Entao("^a inclusao sera concluida com sucesso$")
 	public void a_inclusao_sera_concluida_com_sucesso() throws Throwable {
-<<<<<<< HEAD:ifd.cso/src/main/java/br/com/rabobank/ifd/cso/steps/bens/TelaBensMoveisImoveisStep.java
 		Assert.assertTrue("O item foi adicionado da lista!", telaBensMoveisImoveisObject.confirmarInclusaoMoveis());
 		screenshot.getScreenshot("Lista_DepoisInclusao");
 	}
@@ -103,12 +102,8 @@ public class TelaBensMoveisImoveisStep{
 	public void a_inclusao_bens_imoveis_sera_concluida_com_sucesso() throws Throwable {
 		Assert.assertTrue("O item foi adicionado da lista!", telaBensMoveisImoveisObject.confirmarInclusaoImoveis());
 		screenshot.getScreenshot("Lista_DepoisInclusao");
-=======
-
-		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
-		screenshot.getScreenshot("Lista_Depois_Exclusao");
-
->>>>>>> 2839769fe9762b1ac24990da282dae012c8c365a:ifd.cso/src/main/java/br/com/rabobank/ifd/cso/steps/bens/TelaBensMoveisStep.java
+//		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
+//		screenshot.getScreenshot("Lista_Depois_Exclusao");
 	}
 	
 	

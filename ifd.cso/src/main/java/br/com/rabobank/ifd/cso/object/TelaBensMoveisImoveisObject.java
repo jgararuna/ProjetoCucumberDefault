@@ -91,7 +91,6 @@ public class TelaBensMoveisImoveisObject extends TelaBensMoveisImoveisPage {
 		}
 		return verify;
 	}
-<<<<<<< HEAD:ifd.cso/src/main/java/br/com/rabobank/ifd/cso/object/TelaBensMoveisImoveisObject.java
 
 	public boolean confirmarExclusaoImoveis() throws InterruptedException {
 		
@@ -108,9 +107,7 @@ public class TelaBensMoveisImoveisObject extends TelaBensMoveisImoveisPage {
 		return verify;
 	}
 
-=======
 		
->>>>>>> 2839769fe9762b1ac24990da282dae012c8c365a:ifd.cso/src/main/java/br/com/rabobank/ifd/cso/object/TelaBensMoveisObject.java
 	public boolean confirmarAlteracao() throws InterruptedException {
 
 			int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+", ""));
