@@ -12,7 +12,7 @@ public class TelaBensMoveisImoveisObject extends TelaBensMoveisImoveisPage {
 	private TempoEsperaUtils espera = new TempoEsperaUtils(driver);
 	private ListWebElementUtils listWebElementUtils = new ListWebElementUtils();
 	private ScrollUtils scroll = new ScrollUtils(driver);
-	int numItensAntes;
+	int numItensAntes = 0;
 
 	public TelaBensMoveisImoveisObject(WebDriver driver) {
 		super(driver);
@@ -54,9 +54,6 @@ public class TelaBensMoveisImoveisObject extends TelaBensMoveisImoveisPage {
 		espera.verificarElementoClicavel(10, btnDeletar);
 		btnDeletar.click();
 		espera.verificarLoadDesaparecer(20);
-		espera.verificarLoadAparecer(20);
-		espera.verificarLoadDesaparecer(20);
-
 //		espera.verificarElementoClicavel(10, btnDeletar);
 //		btnDeletar.click();
 //		espera.verificarLoadDesaparecer(10);
@@ -87,19 +84,14 @@ public class TelaBensMoveisImoveisObject extends TelaBensMoveisImoveisPage {
 
 	public boolean confirmarExclusaoMoveis() throws InterruptedException {
 
-		// int numItensDepois = 2;
-		// int numItensDepois =
-		// listWebElementUtils.listChildOfWebElement(listaBensMoveis);
-		int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+", ""));
-		System.out.println("k " + numItensDepois);
+		int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+",""));
 		boolean verify = false;
-		if (numItensAntes > numItensDepois) {
-			verify = true;
-			// int numItensDepois = 2;
-
+		if(numItensAntes > numItensDepois) {
+			verify = true;	
 		}
 		return verify;
 	}
+<<<<<<< HEAD:ifd.cso/src/main/java/br/com/rabobank/ifd/cso/object/TelaBensMoveisImoveisObject.java
 
 	public boolean confirmarExclusaoImoveis() throws InterruptedException {
 		
@@ -116,15 +108,19 @@ public class TelaBensMoveisImoveisObject extends TelaBensMoveisImoveisPage {
 		return verify;
 	}
 
+=======
+		
+>>>>>>> 2839769fe9762b1ac24990da282dae012c8c365a:ifd.cso/src/main/java/br/com/rabobank/ifd/cso/object/TelaBensMoveisObject.java
 	public boolean confirmarAlteracao() throws InterruptedException {
 
-		int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+", ""));
-		System.out.println("k " + numItensDepois);
-		boolean verify = false;
-		if (numItensAntes == numItensDepois) {
-			verify = true;
-		}
-		return verify;
+			int numItensDepois = Integer.valueOf(btnMoveis.getText().replaceAll("\\D+", ""));
+			System.out.println("k " + numItensDepois);
+			boolean verify = false;
+			if (numItensAntes == numItensDepois) {
+				verify = true;
+			}
+			return verify;
+			
 	}
 
 	public boolean confirmarAlteracaoImovel() throws InterruptedException {

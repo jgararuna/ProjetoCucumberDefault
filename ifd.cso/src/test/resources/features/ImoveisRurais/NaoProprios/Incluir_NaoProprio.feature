@@ -23,7 +23,7 @@ Funcionalidade: Validar inclusão de Imoveis Nao Proprios
   	E preencho o campo Custo(Ha) e distribuo todos os períodos disponíveis para valor fixo na coluna anoUm
   	E preencho o campo Custo(Ha) e distribuo todos os períodos disponíveis para valor fixo na coluna projeção
   	E ciclo no botão Salvar
-  	Entao o sistema comclui o cadastro e apresenta mensagem de sucesso
+  	Entao o sistema conclui o cadastro e apresenta mensagem de sucesso
   	
   @Inclusao_ImoveisNaoProprios_Contrato
   Cenario: CT002 - Validar a inclusão de imoveis nao proprios preenchendo todas as colunas como contrato
@@ -33,7 +33,7 @@ Funcionalidade: Validar inclusão de Imoveis Nao Proprios
   	E preencho o campo Kg/Ha e distribuo todos os períodos disponíveis para contrato na coluna anoUm
   	E preencho o campo Kg/Ha e distribuo todos os períodos disponíveis para contrato na coluna projeção
   	E ciclo no botão Salvar
-  	Entao o sistema comclui o cadastro e apresenta mensagem de sucesso
+  	Entao o sistema conclui o cadastro e apresenta mensagem de sucesso
   
  	@Inclusao_ImoveisNaoProprios_PreencherColunaAtual_Contrato
   Cenario: CT003 - Validar a inclusão de imoveis nao proprios preenchendo a coluna Atual

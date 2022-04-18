@@ -1,5 +1,6 @@
 package br.com.rabobank.ifd.cso.steps.imoveisrurais;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.vimalselvam.cucumber.listener.Reporter;
@@ -142,6 +143,7 @@ public class TelaImoveisRuraisStep{
 	/* Fluxos de inclusao */
 	@Quando("^clico no botão de incluir imovel nao proprio$")
 	public void clico_no_botão_de_incluir_imovel_nao_proprio() throws Throwable {
+		screenshot.getScreenshot("Lista_AntesInclusao");
 	    telaImoveisRuraisObject.clicarAddImovelNaoProprio();
 	}
 
@@ -159,13 +161,11 @@ public class TelaImoveisRuraisStep{
 	@Quando("^preencho o campo Custo\\(Ha\\) e distribuo todos os períodos disponíveis para valor fixo na coluna atual$")
 	public void preencho_o_campo_Custo_Ha_e_distribuo_todos_os_períodos_disponíveis_para_valor_fixo_na_coluna_atual() throws Throwable {
 	    telaImoveisRuraisObject.preencherColunaAtualAnoUmValorFixo("Atual");
-	    screenshot.getScreenshot("numbers1");
 	}
 	
 	@Quando("^preencho o campo Custo\\(Ha\\) e distribuo todos os períodos disponíveis para valor fixo na coluna anoUm$")
 	public void preencho_o_campo_Custo_Ha_e_distribuo_todos_os_períodos_disponíveis_para_valor_fixo_na_coluna_anoUm() throws Throwable {
 		telaImoveisRuraisObject.preencherColunaAtualAnoUmValorFixo("Ano 1");
-		screenshot.getScreenshot("numbers2");
 	}
 	
 	@Quando("^preencho o campo Custo\\(Ha\\) e distribuo todos os períodos disponíveis para valor fixo na coluna projeção$")
@@ -187,7 +187,6 @@ public class TelaImoveisRuraisStep{
 	@Quando("^preencho o campo Kg/Ha e distribuo todos os períodos disponíveis para contrato na coluna atual$")
 	public void preencho_o_campo_Kg_Ha_e_distribuo_todos_os_períodos_disponíveis_para_contrato_na_coluna_atual() throws Throwable {
 	    telaImoveisRuraisObject.preencherColunaAtualAnoUmContrato("Atual");
-		//System.out.println("nois");
 	}
 	
 	@Quando("^preencho o campo Kg/Ha e distribuo todos os períodos disponíveis para contrato na coluna anoUm$")
@@ -202,12 +201,13 @@ public class TelaImoveisRuraisStep{
 	
 	@E("^ciclo no botão Salvar$")
 	public void ciclo_no_botão_Salvar() throws Throwable {
-	    //telaImoveisRuraisObject.clicarBotaoSalvar();
+	    telaImoveisRuraisObject.clicarBotaoSalvar();
 	}
 
-	@Entao("^o sistema comclui o cadastro e apresenta mensagem de sucesso$")
-	public void o_sistema_comclui_o_cadastro_e_apresenta_mensagem_de_sucesso() throws Throwable {
-	    System.out.println("oie");
+	@Entao("^o sistema conclui o cadastro e apresenta mensagem de sucesso$")
+	public void o_sistema_conclui_o_cadastro_e_apresenta_mensagem_de_sucesso() throws Throwable {
+		Assert.assertTrue("O item não foi adicionado da lista!", telaImoveisRuraisObject.confirmarInclusao());
+		screenshot.getScreenshot("Lista_DepoisInclusao");
 	}
 	
 	

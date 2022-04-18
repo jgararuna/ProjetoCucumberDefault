@@ -39,7 +39,7 @@ public class RandomUtils {
 		
 		long numberGenerated = (long) ((Math.random() * (numberConverted2 - numberConverted)) + numberConverted);
 		
-		System.out.println(numberGenerated);
+		//System.out.println(numberGenerated);
 		
 		return String.valueOf(numberGenerated);
 		
@@ -58,7 +58,7 @@ public class RandomUtils {
 		
 		double numberGenerated = (double) ((Math.random() * (numberConverted2 - numberConverted)) + numberConverted);
 		
-		System.out.println(df.format(numberGenerated));
+		//System.out.println(df.format(numberGenerated));
 		
 		return String.valueOf(df.format(numberGenerated).replace(".", ","));
 		

@@ -28,7 +28,7 @@ public class InclusaoContratoRunner extends RunnerSetup{
 	
 	@BeforeClass
 	public static void setup() {
-		new InclusaoContratoRunner(br.com.rabobank.ifd.cso.runners.imoveisrurais.naoproprios.InclusaoValorFixoRunner.class);
+		new InclusaoContratoRunner(br.com.rabobank.ifd.cso.runners.imoveisrurais.naoproprios.InclusaoContratoRunner.class);
 	}
 	
 	@AfterClass

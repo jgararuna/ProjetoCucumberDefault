@@ -2,6 +2,7 @@ package br.com.rabobank.ifd.cso.managers;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -46,8 +47,9 @@ public class DriverManager {
 		}
 
 		if (FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize())
-			webDriver.manage().window().maximize();
-		webDriver.manage().timeouts().implicitlyWait(
+			//webDriver.manage().window().maximize();
+			webDriver.manage().window().setSize(new Dimension(1903, 3665));
+			webDriver.manage().timeouts().implicitlyWait(
 				FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(), TimeUnit.SECONDS);
 
 		return webDriver;
