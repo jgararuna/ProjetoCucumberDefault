@@ -14,6 +14,7 @@ Funcionalidade: Validar inclusão de Imoveis Nao Proprios
   @Alteracao_ImoveisNaoProprios
   Cenario: CT001 - Validar a alteração de imoveis nao proprios 
 		E altero os dados obrigatórios de cadastro
+		E excluo todas as distribuições
 		E altero a colonua Atual
 		E altero a coluna Ano Um
 		E altero as projeções
