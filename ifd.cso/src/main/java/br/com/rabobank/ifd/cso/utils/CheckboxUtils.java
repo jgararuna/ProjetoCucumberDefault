@@ -9,5 +9,13 @@ public class CheckboxUtils {
 			checkbox.click();			
 		}
 	}
+	
+//	public void verificarCheckboxMarcado(WebElement checkbox) {
+//		
+//		if(checkbox.isSelected()) {
+//			checkbox.click();			
+//		}
+//		
+//	}
 
 }
