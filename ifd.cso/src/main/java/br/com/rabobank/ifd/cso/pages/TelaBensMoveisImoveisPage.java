@@ -6,11 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class TelaBensMoveisPage {
+public class TelaBensMoveisImoveisPage {
 	
 	protected WebDriver driver;
 
-	public TelaBensMoveisPage(WebDriver driver) {
+	public TelaBensMoveisImoveisPage(WebDriver driver) {
 		this.driver = driver;
 		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(this.driver, 20);
 		PageFactory.initElements(factory, this);	
@@ -60,6 +60,9 @@ public class TelaBensMoveisPage {
 	
 	@FindBy(id = "btn_adicionar_bens_moveis")
 	protected WebElement btnAdicionarBemMovel;
+
+	@FindBy(id = "btn_adicionar_bens_imoveis")
+	protected WebElement btnAdicionarBemImovel;
 	
 	@FindBy(id = "descrcaoItem")
 	protected WebElement cmpDescricaoItem;
@@ -70,7 +73,13 @@ public class TelaBensMoveisPage {
 	@FindBy(id = "valorUnitario")
 	protected WebElement cmpValorUnitario;
 
+	@FindBy(id = "valorTotal")
+	protected WebElement cmpValorTotal;
+
 	@FindBy(id = "salvar")
 	protected WebElement btnSalvar;	
+
+	@FindBy(id = "inmoveis")
+	protected WebElement btnImoveis;	
 
 }

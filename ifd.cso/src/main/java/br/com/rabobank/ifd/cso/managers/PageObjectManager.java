@@ -2,7 +2,7 @@ package br.com.rabobank.ifd.cso.managers;
 
 import org.openqa.selenium.WebDriver;
 
-import br.com.rabobank.ifd.cso.object.TelaBensMoveisObject;
+import br.com.rabobank.ifd.cso.object.TelaBensMoveisImoveisObject;
 import br.com.rabobank.ifd.cso.object.TelaGeralObject;
 import br.com.rabobank.ifd.cso.object.TelaImoveisRuraisObject;
 import br.com.rabobank.ifd.cso.object.TelaLoginObject;
@@ -19,7 +19,7 @@ public class PageObjectManager {
 	private TelaGeralObject telaGeralObject;
 	
 	//private TelaSemoventesPage telaSemoventesPage;
-	private TelaBensMoveisObject telaBensMoveisObject;
+	private TelaBensMoveisImoveisObject telaBensMoveisObject;
 
 //	private TelaImoveisRuraisPage telaImoveisRuraisPage;
 	private TelaImoveisRuraisObject telaImoveisRuraisObject;
@@ -54,7 +54,7 @@ public class PageObjectManager {
 		return (telaImoveisRuraisObject == null) ? telaImoveisRuraisObject = new TelaImoveisRuraisObject(driver) : telaImoveisRuraisObject;			
 	}
 	
-	public TelaBensMoveisObject getTelaBensMoveisObject() {
-		return (telaBensMoveisObject == null) ? telaBensMoveisObject = new TelaBensMoveisObject(driver) : telaBensMoveisObject;
+	public TelaBensMoveisImoveisObject getTelaBensMoveisObject() {
+		return (telaBensMoveisObject == null) ? telaBensMoveisObject = new TelaBensMoveisImoveisObject(driver) : telaBensMoveisObject;
 	}
 }
