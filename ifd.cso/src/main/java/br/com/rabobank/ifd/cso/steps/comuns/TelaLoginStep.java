@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.vimalselvam.cucumber.listener.Reporter;
 
-import br.com.rabobank.ifd.cso.object.TelaBensMoveisObject;
+import br.com.rabobank.ifd.cso.object.TelaBensMoveisImoveisObject;
 import br.com.rabobank.ifd.cso.object.TelaLoginObject;
 import br.com.rabobank.ifd.cso.utils.ScreenshotUtils;
 import br.com.rabobank.ifd.cso.utils.TestContextUtils;
