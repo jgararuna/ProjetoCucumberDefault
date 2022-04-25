@@ -18,16 +18,33 @@ public class TelaLoginPage {
 		
 	}
 	
-	@FindBy(xpath = "//*[@id=\"login\"]")
+	//@FindBy(xpath = "//*[@id=\"login\"]")
+	@FindBy(id = "i0116")
 	protected WebElement cmpLogin;
+	
+	@FindBy(id = "idSIButton9")
+	protected WebElement btnAvancar;
+	
+	@FindBy(id = "aadRedirectCancel")
+	protected WebElement btnCancelar;
 
-	@FindBy(xpath = "//*[@id=\"senha\"]")
+	//@FindBy(xpath = "//*[@id=\"senha\"]")
+	@FindBy(id = "passwordInput")
 	protected WebElement cmpSenha;
 
-	@FindBy(xpath = "//*[@id=\"entrar\"]")
-	protected WebElement btnEntrar;
+	@FindBy(id = "submitButton")
+	protected WebElement btnSignin;
 	
-	@FindBy(xpath = "//*[@id=\"informacoes_patrimoniais\"]")
+	@FindBy(id = "idSIButton9")
+	protected WebElement btnSim;
+	
+	@FindBy(id = "idSIButton9")
+	protected WebElement btnContinuar;
+	
+	@FindBy(id = "entrar")
+	protected WebElement btnConcordo;
+	
+	@FindBy(id = "informacoes_patrimoniais")
 	protected WebElement btnInfPatrimoniais;
 
 }
