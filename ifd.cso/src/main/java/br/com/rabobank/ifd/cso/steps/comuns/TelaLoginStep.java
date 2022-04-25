@@ -32,18 +32,28 @@ public class TelaLoginStep {
 	
 	@Dado("^que estou no site do IFD carregado$")
 	public void que_estou_no_site_do_IFD() throws Throwable {
-	    telaLoginObject.verificarSiteCarreado();
+	    telaLoginObject.verificarSiteCarregado();
 	}
 
 	@Quando("^eu informo meus dados de usuario$")
 	public void eu_informo_meus_dados_de_usuario() throws Throwable {
 	    telaLoginObject.informarDados();
 	}
-
-	@E("^clico em entrar$")
-	public void clico_em_entrar() throws Throwable {
-	    telaLoginObject.acionarEntrar();
+	
+	@E("^executo os passos para entrar$")
+	public void executo_os_passo_para_entrar() throws Throwable {
+	    telaLoginObject.executarPassosParaEntrada();
 	}
+
+	@E("^concordo com os termos$")
+	public void concordo_com_os_termos() throws Throwable {
+	    telaLoginObject.concordarTermos();
+	}
+
+//	@E("^clico em entrar$")
+//	public void clico_em_entrar() throws Throwable {
+//	    telaLoginObject.acionarEntrar();
+//	}
 
 	@Entao("^as funcionalidades do sistema ficam disponíveis$")
 	public void as_funcionalidades_do_sistema_ficam_disponíveis() throws Throwable {
@@ -56,7 +66,8 @@ public class TelaLoginStep {
 		try {
 			que_estou_no_site_do_IFD();
 			eu_informo_meus_dados_de_usuario();
-			clico_em_entrar();
+			executo_os_passo_para_entrar();
+			concordo_com_os_termos();
 			as_funcionalidades_do_sistema_ficam_disponíveis();
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
