@@ -12,10 +12,15 @@ import br.com.rabobank.ifd.cso.managers.FileReaderManager;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
+//@RunWith(Cucumber.class)
+//@CucumberOptions(features = {"src/main/java/br/com/rabobank/ifd/cso/features/"},
+//				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.comuns"},
+//				 tags = {"@Logar1"},
+//                 plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/main/java/br/com/rabobank/ifd/cso/features/"},
+@CucumberOptions(features = {"src/test/resources/features/"},
 				 glue = {"br.com.rabobank.ifd.cso.steps.hooks", "br.com.rabobank.ifd.cso.steps.comuns"},
-				 tags = {"@Logar1"},
+				 tags = {"@Logar"},
                  plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"})
 public class LoginRunner extends RunnerSetup{
 
