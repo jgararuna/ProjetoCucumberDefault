@@ -18,11 +18,11 @@ public class TelaGeralPage {
 		
 	}
 	
-	@FindBy(id = "informacoes_patrimoniais")
+	//@FindBy(id = "informacoes_patrimoniais")
+	@FindBy(xpath = "/html/body/app-root/app-nav/div[1]/a[3]")
 	protected WebElement btnInfPatrimoniais;
 	
 	@FindBy(xpath = "/html/body/app-root/app-nav/div[1]")
-	protected WebElement menuLateral;
-	
+	protected WebElement menuLateral;	
 
 }

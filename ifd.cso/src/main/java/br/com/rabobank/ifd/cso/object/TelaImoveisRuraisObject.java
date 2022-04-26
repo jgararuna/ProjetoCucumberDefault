@@ -14,8 +14,10 @@ import br.com.rabobank.ifd.cso.pages.TelaImoveisRuraisPage;
 import br.com.rabobank.ifd.cso.utils.CheckboxUtils;
 import br.com.rabobank.ifd.cso.utils.ComboboxUtils;
 import br.com.rabobank.ifd.cso.utils.ConvertUtils;
+import br.com.rabobank.ifd.cso.utils.ListWebElementUtils;
 import br.com.rabobank.ifd.cso.utils.RandomUtils;
 import br.com.rabobank.ifd.cso.utils.ScrollUtils;
+import br.com.rabobank.ifd.cso.utils.SendKeys;
 import br.com.rabobank.ifd.cso.utils.TempoEsperaUtils;
 import br.com.rabobank.ifd.cso.utils.WebElementDataUtils;
 
@@ -24,11 +26,13 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	private ScrollUtils scroll = new ScrollUtils(driver);
 	private TempoEsperaUtils espera = new TempoEsperaUtils(driver);
 	private ComboboxUtils comboboxUtils = new ComboboxUtils(driver);
-	private ConvertUtils convertUtils = new ConvertUtils();
+	//private ConvertUtils convertUtils = new ConvertUtils();
 	private CheckboxUtils checkboxUtils = new CheckboxUtils();
-	private ScrollUtils scrollUtils = new ScrollUtils(driver);
+	//private ScrollUtils scrollUtils = new ScrollUtils(driver);
 	private WebElementDataUtils webElementDataUtils = new WebElementDataUtils();
 	private RandomUtils randomUtils = new RandomUtils();
+	private ListWebElementUtils listWebElementUtils = new ListWebElementUtils();
+	private SendKeys sendKeys = new SendKeys();
 	int numItensAntes = 0;
 	
 	public TelaImoveisRuraisObject(WebDriver driver) {
@@ -55,98 +59,131 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 //		btnInfPatrimoniais.click();
 //	}
 
-	public void clicarAbaImoveisRurais() throws InterruptedException {
-		//espera.sleep(4000);
-		espera.verificarElementoClicavel(10, btnAbaImoveisRurais);
-		espera.verificarLoadDesaparecer(30);
-		btnAbaImoveisRurais.click();
-	}
-
+//	public void clicarAbaImoveisRurais() throws InterruptedException {
+//		//espera.sleep(4000);
+//		espera.verificarElementoClicavel(10, btnAbaImoveisRurais);
+//		espera.verificarLoadDesaparecer(30);
+//		btnAbaImoveisRurais.click();
+//	}
+//
 	public void clicarNaoProprios() throws InterruptedException {
-		//scroll.scrollPosicao(200);
+		espera.verificarElementoClicavel(15, btnNaoProprios);
 		espera.verificarLoadDesaparecer(15);
 		btnNaoProprios.click();
-		//espera.sleep(2000);
+		espera.verificarLoadDesaparecer(15);
 	}
+//	
+//	public void clicarProprios() throws InterruptedException {
+//		//scroll.scrollPosicao(250);
+//		espera.verificarLoadDesaparecer(10);
+//		btnProprios.click();
+//		//espera.sleep(2000);
+//	}
+//
+//	public void clicarIconeLixeira() throws InterruptedException {
+//		scroll.scrollPosicao(200);
+//		//espera.sleep(4000);
+//		espera.verificarElementoExiste(10, btnIconeLixeira);
+//		btnIconeLixeira.click();
+//		espera.sleep(4000);
+//
+//	}
+//
+//	public void clicarDeletar() throws InterruptedException {
+//		//espera.sleep(2000);
+//		espera.verificarElementoExiste(10, btnDeletar);
+//		btnDeletar.click();
+//		//espera.sleep(6000);
+//	}
+//
+//	public void clicarCancelar() throws InterruptedException {
+//		espera.verificarElementoExiste(10, btnCancelar);
+//		btnCancelar.click();
+//		//espera.sleep(2000);
+//	}
+//
+//	public void fecharJanelaDeletar() throws InterruptedException {
+//		espera.verificarElementoExiste(10, btnFecharDeletar);
+//		btnFecharDeletar.click();
+//		//espera.sleep(4000);
+//	}
+
+//	public void clicarFiltro() {
+//		espera.verificarElementoExiste(10, cmpFiltro);
+//		cmpFiltro.click();
+//	}
+//
+//	public void selecionarDenominacao() {
+//		espera.verificarElementoExiste(10, lblDenominacao);
+//		lblDenominacao.click();
+//		scroll.scrollPosicao(100);		
+//	}
+//
+//	public void selecionarCidade() {
+//		espera.verificarElementoExiste(10, lblCidade);
+//		lblCidade.click();
+//		scroll.scrollPosicao(100);		
+//	}
+//
+//	public void selecionarUF() {
+//		espera.verificarElementoExiste(10, lblUF);
+//		lblUF.click();
+//		scroll.scrollPosicao(100);		
+//	}
+//
+//	public void selecionarComarca() {
+//		espera.verificarElementoExiste(10, lblComarca);
+//		lblComarca.click();
+//		scroll.scrollPosicao(100);		
+//	}
+
+//	public void preencherPesquisa(String pesquisa) throws InterruptedException {
+//		espera.verificarElementoExiste(10, cmpPesquisar);
+//		espera.verificarLoadDesaparecer(10);
+//		cmpPesquisar.click();
+//		cmpPesquisar.sendKeys(pesquisa);
+//		//espera.sleep(2000);
+//	}
+//	
+//	public void clicarLupa() throws InterruptedException {
+//		//espera.sleep(2000);
+//		scroll.scrollPosicao(100);		
+//		btnLupa.click();
+//		//espera.sleep(6000);
+//	}
 	
-	public void clicarProprios() throws InterruptedException {
-		//scroll.scrollPosicao(250);
-		espera.verificarLoadDesaparecer(10);
-		btnProprios.click();
-		//espera.sleep(2000);
-	}
-
-	public void clicarIconeLixeira() throws InterruptedException {
-		scroll.scrollPosicao(200);
-		//espera.sleep(4000);
-		espera.verificarElementoExiste(10, btnIconeLixeira);
-		btnIconeLixeira.click();
-		espera.sleep(4000);
-
-	}
-
-	public void clicarDeletar() throws InterruptedException {
-		//espera.sleep(2000);
-		espera.verificarElementoExiste(10, btnDeletar);
-		btnDeletar.click();
-		//espera.sleep(6000);
-	}
-
-	public void clicarCancelar() throws InterruptedException {
-		espera.verificarElementoExiste(10, btnCancelar);
-		btnCancelar.click();
-		//espera.sleep(2000);
-	}
-
-	public void fecharJanelaDeletar() throws InterruptedException {
-		espera.verificarElementoExiste(10, btnFecharDeletar);
-		btnFecharDeletar.click();
-		//espera.sleep(4000);
-	}
-
-	public void clicarFiltro() {
-		espera.verificarElementoExiste(10, cmpFiltro);
-		cmpFiltro.click();
-	}
-
-	public void selecionarDenominacao() {
-		espera.verificarElementoExiste(10, lblDenominacao);
-		lblDenominacao.click();
-		scroll.scrollPosicao(100);		
-	}
-
-	public void selecionarCidade() {
-		espera.verificarElementoExiste(10, lblCidade);
-		lblCidade.click();
-		scroll.scrollPosicao(100);		
-	}
-
-	public void selecionarUF() {
-		espera.verificarElementoExiste(10, lblUF);
-		lblUF.click();
-		scroll.scrollPosicao(100);		
-	}
-
-	public void selecionarComarca() {
-		espera.verificarElementoExiste(10, lblComarca);
-		lblComarca.click();
-		scroll.scrollPosicao(100);		
-	}
-
-	public void preencherPesquisa(String pesquisa) throws InterruptedException {
-		espera.verificarElementoExiste(10, cmpPesquisar);
-		espera.verificarLoadDesaparecer(10);
-		cmpPesquisar.click();
-		cmpPesquisar.sendKeys(pesquisa);
-		//espera.sleep(2000);
-	}
+	/*
+	 * Métodos de pesquisa 
+	 */
 	
-	public void clicarLupa() throws InterruptedException {
-		//espera.sleep(2000);
-		scroll.scrollPosicao(100);		
+	public boolean pesquisarProposta(String nomeProposta) {
+		
+		boolean verificador = false;
+		numItensAntes = Integer.valueOf(btnNaoProprios.getText().replaceAll("\\D+",""));
+		comboboxUtils.selecionarOpcaoComboBoxByText(cmbFiltro, "Denominação");
+		cmpPesquisar.sendKeys(nomeProposta);
 		btnLupa.click();
-		//espera.sleep(6000);
+		espera.verificarLoadDesaparecer(30);
+		if(listWebElementUtils.listChildOfWebElement(listNaoProprios) > 0) {
+			verificador = true;
+		}
+		
+		return verificador;
+		
 	}
+	
+	public void clicarAlterar() {
+		
+		btnEditarPrimeiraProposta.click();
+		espera.verificarLoadDesaparecer(30);
+		
+	}
+	
+	
+	
+	/*
+	 * Métodos de inclusão 
+	 */
 	
 	public void clicarAddImovelNaoProprio() {
 		
@@ -162,10 +199,11 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 	
 	public void preencherCamposObrigatorios() {
 
-		espera.verificarElementosExistem(10, btnsEditarProjecao);
-		cmpMatricula.sendKeys(randomUtils.generateStringOfLongRandomNumber(webElementDataUtils.getMaxlengthElement(cmpMatricula)));
+		espera.verificarElementosExistem(20, btnsEditarProjecao);
+		cmpMatricula.sendKeys(randomUtils.generateStringOfLongRandomNumber(10));
 		addMatricula.click();
-		cmpNomeImovel.sendKeys("Nome Imovel Nao Proprio");
+		//cmpNomeImovel.sendKeys("Nome Imovel Nao Proprio");
+		cmpNomeImovel.sendKeys("Teste Alteração(Não excluir)");
 		//cmpAreaUtil.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(webElementDataUtils.getMaxlengthElement(cmpAreaUtil)));
 		cmpAreaUtil.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(6));
 		//cmpAreaUtil.sendKeys("938657,65");
@@ -210,28 +248,59 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 		//cmpCusto.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(webElementDataUtils.getMaxlengthElement(cmpCusto)));
 		cmpValorTotal.click();
 		
-		double valorTotal = 0.00;
+		double valorTotalDouble;
+		BigDecimal valorTotal;
 		String valorTotalString;
 
+		//valorTotalString = "15.26";
 		valorTotalString = cmpValorTotal.getAttribute("value").replace("R$ ","").replace(".", "").replace(",", ".");
 		//System.out.println(valorTotalString);
-		valorTotal = Double.valueOf(valorTotalString);
+		valorTotalDouble = Double.valueOf(valorTotalString);
+		valorTotal = BigDecimal.valueOf(valorTotalDouble);
 		//BigDecimal num = new BigDecimal(valorTotal).setScale(2, BigDecimal.ROUND_HALF_EVEN);
-		//System.out.println(num);
+		System.out.println("total " + valorTotal);
 		//System.out.println("aqui1 " + num);
 		
 //		double valor = 0.00;
 //		valor = Double.valueOf(valorTotal/tamanhoComboboxPeriodo).doubleValue();
 //		BigDecimal valorDecimal = new BigDecimal(valor);
 		//BigDecimal valorDecimal = new BigDecimal(num.doubleValue()/tamanhoComboboxPeriodo).setScale(2, BigDecimal.ROUND_HALF_EVEN);
-		BigDecimal valorDecimal = new BigDecimal((valorTotal)/tamanhoComboboxPeriodo).setScale(2, BigDecimal.ROUND_DOWN);
-		//System.out.println("aqui2 " + valorDecimal);
+		
+		//BigDecimal valorDecimal = new BigDecimal((valorTotal)/tamanhoComboboxPeriodo).setScale(2, BigDecimal.ROUND_DOWN);
+		BigDecimal valorDecimal = valorTotal.divide(BigDecimal.valueOf(tamanhoComboboxPeriodo), 2, RoundingMode.DOWN).setScale(2, BigDecimal.ROUND_DOWN);
+		//BigDecimal valorDecimal = new BigDecimal((valorTotal)/tamanhoComboboxPeriodo);
+		System.out.println("totalDec " + valorDecimal);	
+		//BigDecimal valorTotalParcial = new BigDecimal(Double.valueOf(valorDecimal.toString()) * (tamanhoComboboxPeriodo - 1)).setScale(2, BigDecimal.ROUND_DOWN);
+		BigDecimal valorTotalParcial = valorDecimal.multiply(BigDecimal.valueOf(tamanhoComboboxPeriodo - 1)).setScale(2, BigDecimal.ROUND_DOWN);
+		//BigDecimal valorTotalParcial = new BigDecimal(Double.valueOf(valorDecimal.toString()) * (tamanhoComboboxPeriodo - 1));
+		System.out.println("totalparc" + valorTotalParcial);
+		
+//		System.out.println("parc" + valorTotal);
+//		System.out.println("parc" + Double.valueOf(valorTotalParcial.toString()));
+		//BigDecimal valorDecimalUlt = new BigDecimal(valorTotal - Double.valueOf(valorTotalParcial.toString())).setScale(2, BigDecimal.ROUND_UP);
+		//BigDecimal valorDecimalUlt = new BigDecimal(valorTotal - Double.valueOf(valorTotalParcial.toString()));
+		BigDecimal valorDecimalUlt = valorTotal.subtract(valorTotalParcial);
+//		double tot = valorTotal - valorTotalParcial.doubleValue();
+		System.out.println(valorDecimalUlt);
 		
 		while(i <= tamanhoComboboxPeriodo){
 			
-			comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
-			cmpValor.sendKeys(String.valueOf(valorDecimal).replace(".", ","));
-			btnDistribuir.click();
+//			comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+//			cmpValor.sendKeys(String.valueOf(valorDecimal).replace(".", ","));
+//			btnDistribuir.click();
+//			i++;
+			if(i < tamanhoComboboxPeriodo) {
+				comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+				cmpValor.sendKeys(String.valueOf(valorDecimal).replace(".", ","));
+				//cmpValor.sendKeys(valorDecimalUltString);
+				btnDistribuir.click();
+			}
+			else {
+				comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+				cmpValor.sendKeys(String.valueOf(valorDecimalUlt).replace(".", ","));
+				//cmpValor.sendKeys(valorDecimalUltString);
+				btnDistribuir.click();	
+			}
 			i++;
 			
 		}
@@ -330,48 +399,56 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 		}
 		
 		int i = 1, tamanhoComboboxPeriodo = comboboxUtils.getComboboxSize(combobox) - 1;
-		//cmpKg.sendKeys(convertUtils.convertInttoString(tamanhoComboboxPeriodo));
 		cmpKg.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(6));
 		cmpValorTotal.click();
 		
-		NumberFormat nf = new DecimalFormat("#0.00");
-		//NumberFormat nf = new DecimalFormat("%.0f");
-		
-		double valorTotal = 0.00;
+		double valorTotalDouble;
+		BigDecimal valorTotal;
 		String valorTotalString;
 
+		//valorTotalString = "15.26";
 		valorTotalString = cmpValorTotal.getAttribute("value").replace("R$ ","").replace(".", "").replace(",", ".");
 		//System.out.println(valorTotalString);
-		valorTotal = Double.valueOf(valorTotalString);
-		System.out.println("aqui1 " + valorTotal);
+		valorTotalDouble = Double.valueOf(valorTotalString);
+		valorTotal = BigDecimal.valueOf(valorTotalDouble);
 		//BigDecimal num = new BigDecimal(valorTotal).setScale(2, BigDecimal.ROUND_HALF_EVEN);
-		//BigDecimal num = new BigDecimal(valorTotal);
-		//System.out.println(num);
+		System.out.println("total " + valorTotal);
 		//System.out.println("aqui1 " + num);
-		System.out.println("divisao" + valorTotal/tamanhoComboboxPeriodo);
-		//double valor = 0.00;
-		//valor = Double.valueOf(valorTotal/tamanhoComboboxPeriodo).doubleValue();
-		//System.out.println("div" + num.doubleValue()/tamanhoComboboxPeriodo);
+		
+//		double valor = 0.00;
+//		valor = Double.valueOf(valorTotal/tamanhoComboboxPeriodo).doubleValue();
+//		BigDecimal valorDecimal = new BigDecimal(valor);
 		//BigDecimal valorDecimal = new BigDecimal(num.doubleValue()/tamanhoComboboxPeriodo).setScale(2, BigDecimal.ROUND_HALF_EVEN);
-		BigDecimal valorDecimal = new BigDecimal(valorTotal/tamanhoComboboxPeriodo).setScale(2, BigDecimal.ROUND_DOWN);
-		System.out.println("doub" + Double.valueOf(valorDecimal.toString()) );
-		//double valorDecimalUlt = 0.00;
-		//valorDecimalUlt = valorTotal - (Double.valueOf(valorDecimal.toString()) * (tamanhoComboboxPeriodo - 1));
-		BigDecimal valorTotalParcial = new BigDecimal(Double.valueOf(valorDecimal.toString()) * (tamanhoComboboxPeriodo - 1));
-		System.out.println("parc" + valorTotalParcial);
-		BigDecimal valorDecimalUlt = new BigDecimal(valorTotal - Double.valueOf(valorTotalParcial.toString())).setScale(2, BigDecimal.ROUND_DOWN);
-		//valor = num.doubleValue()/tamanhoComboboxPeriodo;
-		System.out.println(valorDecimal);
-		System.out.println("ult" + valorDecimalUlt);
-		//valor = Double.valueOf(/tamanhoComboboxPeriodo).doubleValue();
-		//BigDecimal valorDecimal = new BigDecimal(valor);
-		System.out.println("aqui2 " + valorDecimal);
+		
+		//BigDecimal valorDecimal = new BigDecimal((valorTotal)/tamanhoComboboxPeriodo).setScale(2, BigDecimal.ROUND_DOWN);
+		BigDecimal valorDecimal = valorTotal.divide(BigDecimal.valueOf(tamanhoComboboxPeriodo), 2, RoundingMode.DOWN).setScale(2, BigDecimal.ROUND_DOWN);
+		//BigDecimal valorDecimal = new BigDecimal((valorTotal)/tamanhoComboboxPeriodo);
+		System.out.println("totalDec " + valorDecimal);	
+		//BigDecimal valorTotalParcial = new BigDecimal(Double.valueOf(valorDecimal.toString()) * (tamanhoComboboxPeriodo - 1)).setScale(2, BigDecimal.ROUND_DOWN);
+		BigDecimal valorTotalParcial = valorDecimal.multiply(BigDecimal.valueOf(tamanhoComboboxPeriodo - 1)).setScale(2, BigDecimal.ROUND_DOWN);
+		//BigDecimal valorTotalParcial = new BigDecimal(Double.valueOf(valorDecimal.toString()) * (tamanhoComboboxPeriodo - 1));
+		System.out.println("totalparc" + valorTotalParcial);
+		
+//		System.out.println("parc" + valorTotal);
+//		System.out.println("parc" + Double.valueOf(valorTotalParcial.toString()));
+		//BigDecimal valorDecimalUlt = new BigDecimal(valorTotal - Double.valueOf(valorTotalParcial.toString())).setScale(2, BigDecimal.ROUND_UP);
+		//BigDecimal valorDecimalUlt = new BigDecimal(valorTotal - Double.valueOf(valorTotalParcial.toString()));
+		BigDecimal valorDecimalUlt = valorTotal.subtract(valorTotalParcial);
+//		double tot = valorTotal - valorTotalParcial.doubleValue();
+		System.out.println(valorDecimalUlt);
 		
 		while(i <= tamanhoComboboxPeriodo){
 			
-			comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
-			cmpValor.sendKeys(String.valueOf(valorDecimal).replace(".", ","));
-			btnDistribuir.click();
+			if(i < tamanhoComboboxPeriodo) {
+				comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+				cmpValor.sendKeys(String.valueOf(valorDecimal).replace(".", ","));
+				btnDistribuir.click();
+			}
+			else {
+				comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+				cmpValor.sendKeys(String.valueOf(valorDecimalUlt).replace(".", ","));
+				btnDistribuir.click();	
+			}
 			i++;
 			
 		}	
@@ -403,7 +480,9 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 		
 	}
 	
-	
+	/*
+	 * Este método é utilizado tanto na inclusão, quanto na alteração
+	 */
 	public void clicarBotaoSalvar() {
 		
 		btnSalvar.click();
@@ -418,10 +497,10 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 //		}
 		espera.verificarLoadAparecer(60);
 		espera.verificarLoadDesaparecer(60);
-		System.out.println(numItensAntes);
+		System.out.println("antes " + numItensAntes);
 		scroll.scrollElement(btnNaoProprios);
 		int numItensDepois = Integer.valueOf(btnNaoProprios.getText().replaceAll("\\D+",""));
-		System.out.println(numItensDepois);
+		System.out.println("depois" + numItensDepois);
 		boolean verify = false;
 		if(numItensAntes < numItensDepois) {
 			verify = true;			
@@ -430,5 +509,159 @@ public class TelaImoveisRuraisObject extends TelaImoveisRuraisPage{
 		
 	}
 	
+	/*
+	 * Métodos de alteração
+	 */
+	public void alterarDadosCdastrais() {
+		
+		espera.verificarElementosExistem(10, btnsEditarProjecao);
+		excluirMatricula.click();
+		cmpMatricula.sendKeys(randomUtils.generateStringOfLongRandomNumber(10));
+		addMatricula.click();
+		sendKeys.clearAndSendKeys(cmpNomeImovel, "Teste Alteração(Não excluir)");
+		sendKeys.clearAndSendKeys(cmpAreaUtil, randomUtils.generateStringOfDecimalRandomNumber(6));
+		comboboxUtils.selecionarOpcaoComboBoxByText(cbxUf, "GO");
+		espera.verificarLoadDesaparecer(10);
+		comboboxUtils.selecionarOpcaoComboBoxByText(cbxCidade, "Anápolis");
+		sendKeys.clearAndSendKeys(cmpVencimento, "30112022");
+		
+	}
+	
+	public void excluirDistribuicoes() {
+
+		int numDistribAtual = listDistribAtual.size() - 1;
+		int numDistribAno1 = listDistribAno1.size() - 1;
+		int numDistribProj = btnsExcluirProjecao.size();
+		int i = 0;
+		scroll.scrollElement(cbxMercadoria);
+		while(i < numDistribAtual + numDistribAno1){
+			btnExcluirDistrib.click();
+			i++;
+			System.out.println(i);
+		}
+		
+		i = 0;
+		while(i < numDistribProj) {	
+			btnsExcluirProjecao.get(i).click();
+			i++;
+		}	
+		
+	}
+	
+	public void alterarColunaAtualAno1(String nomeColuna) {
+		
+		WebElement combobox, cmpKg, cmpCusto, cmpValor, btnDistribuir, cmpValorTotal, chkBtnValorFixo, chkBtnContrato;
+		
+		if(nomeColuna == "Atual") {
+			combobox = cbxPeriodoAtual;
+			cmpKg = cmpKgAtual;
+			cmpCusto = cmpCustoAtual;
+			cmpValor = cmpValorAtual;
+			btnDistribuir = btnDistribAtual;
+			cmpValorTotal = cmpValorTotalAtual;
+			chkBtnValorFixo = chkBtnValorFixoAtual;
+			chkBtnContrato = chkBtnContratoAtual;
+		}
+		
+		else {
+			combobox = cbxPeriodoAno1;
+			cmpKg = cmpKgAno1;
+			cmpCusto = cmpCustoAno1;
+			cmpValor = cmpValorAno1;
+			btnDistribuir = btnDistribAno1;
+			cmpValorTotal = cmpValorTotalAno1;
+			chkBtnValorFixo = chkBtnValorFixoAno1;
+			chkBtnContrato = chkBtnContratoAno1;
+		}
+		
+		
+		if(chkBtnValorFixo.isSelected()){
+			chkBtnContrato.click();
+			preencherMercadoria("Boi Gordo Com Escala Pasto");
+			cmpKg.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(6));
+			cmpValorTotal.click();		
+		}
+		else{
+			chkBtnValorFixo.click();
+			cmpCusto.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(6));		
+			cmpValorTotal.click();
+		}
+		
+		int i = 1, tamanhoComboboxPeriodo = comboboxUtils.getComboboxSize(combobox) - 1;
+		
+		double valorTotalDouble;
+		BigDecimal valorTotal;
+		String valorTotalString;
+
+		valorTotalString = cmpValorTotal.getAttribute("value").replace("R$ ","").replace(".", "").replace(",", ".");
+		//System.out.println(valorTotalString);
+		valorTotalDouble = Double.valueOf(valorTotalString);
+		valorTotal = BigDecimal.valueOf(valorTotalDouble);
+		System.out.println("total " + valorTotal);
+		BigDecimal valorDecimal = valorTotal.divide(BigDecimal.valueOf(tamanhoComboboxPeriodo), 2, RoundingMode.DOWN).setScale(2, BigDecimal.ROUND_DOWN);
+		System.out.println("totalDec " + valorDecimal);	
+		BigDecimal valorTotalParcial = valorDecimal.multiply(BigDecimal.valueOf(tamanhoComboboxPeriodo - 1)).setScale(2, BigDecimal.ROUND_DOWN);
+		System.out.println("totalparc" + valorTotalParcial);
+		BigDecimal valorDecimalUlt = valorTotal.subtract(valorTotalParcial);
+		System.out.println(valorDecimalUlt);
+		
+		while(i <= tamanhoComboboxPeriodo){
+			
+			if(i < tamanhoComboboxPeriodo) {
+				comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+				cmpValor.sendKeys(String.valueOf(valorDecimal).replace(".", ","));
+				btnDistribuir.click();
+			}
+			else {
+				comboboxUtils.selecionarOpcaoComboBoxByPosition(combobox, 1);
+				cmpValor.sendKeys(String.valueOf(valorDecimalUlt).replace(".", ","));
+				btnDistribuir.click();	
+			}
+			i++;
+			
+		}
+		
+	}
+	
+	public void alterarColunaProjecao() {
+		
+		int i = 0, numeroBtnsEdicao = btnsEditarProjecao.size();
+		
+		while(i < numeroBtnsEdicao){
+			
+			btnsEditarProjecao.get(i).click();
+			if(chkBtnValorFixoProjecao.isSelected()){
+				chkBtnContratoProjecao.click();
+				cmpKgProjecao.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(6));
+				cmpValorTotalProjecao.click();
+			}
+			else{
+				chkBtnValorFixoProjecao.click();
+				cmpCustoProjecao.sendKeys(randomUtils.generateStringOfDecimalRandomNumber(6));		
+				cmpValorTotalProjecao.click();
+			}
+			btnDistribProjecao.click();
+			i++;
+			
+		}		
+		
+	}
+	
+	public boolean confirmarAlteracao() {
+		
+		espera.verificarLoadAparecer(60);
+		espera.verificarLoadDesaparecer(60);
+		System.out.println(numItensAntes);
+		scroll.scrollElement(btnNaoProprios);
+		int numItensDepois = Integer.valueOf(btnNaoProprios.getText().replaceAll("\\D+",""));
+		System.out.println(numItensDepois);
+		boolean verify = false;
+		if(numItensAntes == numItensDepois) {
+			verify = true;			
+		}
+		return verify;
+		
+		
+	}
 
 }

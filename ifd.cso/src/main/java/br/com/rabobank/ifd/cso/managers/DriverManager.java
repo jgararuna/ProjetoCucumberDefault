@@ -1,12 +1,17 @@
 package br.com.rabobank.ifd.cso.managers;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import br.com.rabobank.ifd.cso.enums.DriverType;
 import br.com.rabobank.ifd.cso.utils.TestContextUtils;
@@ -39,7 +44,7 @@ public class DriverManager {
 			break;
 
 		case CHROME:
-			if (webDriver == null) {
+			if (webDriver == null) {					    
 				WebDriverManager.chromedriver().setup();
 				webDriver = new ChromeDriver();
 			}
