@@ -21,14 +21,11 @@ public class TelaLoginStep {
 	private ScreenshotUtils screenshot;
 	
 	public TelaLoginStep(TestContextUtils context) {
-		
 		telaLoginObject = new TelaLoginObject(driver);
 		testContext = context;
 		telaLoginObject = testContext.getPageObjectManager().getTelaLoginObject();
-		screenshot = new ScreenshotUtils(context);
-		
+		screenshot = new ScreenshotUtils(context);	
 	}
-	
 	
 	@Dado("^que estou no site do IFD carregado$")
 	public void que_estou_no_site_do_IFD() throws Throwable {
