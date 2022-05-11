@@ -48,6 +48,8 @@ public class ConfigFileReader {
 			return DriverType.FIREFOX;
 		else if (browserName.equals("iexplorer"))
 			return DriverType.INTERNETEXPLORER;
+		else if (browserName.equals("edge"))
+			return DriverType.EDGE;
 		else
 			throw new RuntimeException(
 					"Valor da chave e nome do navegador em Configuracao.properties não corresponde: " + browserName);
