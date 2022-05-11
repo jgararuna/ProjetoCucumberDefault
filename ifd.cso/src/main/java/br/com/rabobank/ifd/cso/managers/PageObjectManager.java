@@ -6,6 +6,7 @@ import br.com.rabobank.ifd.cso.object.TelaBensMoveisImoveisObject;
 import br.com.rabobank.ifd.cso.object.TelaGeralObject;
 import br.com.rabobank.ifd.cso.object.TelaImoveisRuraisObject;
 import br.com.rabobank.ifd.cso.object.TelaLoginObject;
+import br.com.rabobank.ifd.cso.object.TelaSelecaoPropostaObject;
 //import br.com.rabobank.ifd.cso.object.TelaSemoventesObject;
 
 public class PageObjectManager {
@@ -23,6 +24,8 @@ public class PageObjectManager {
 
 //	private TelaImoveisRuraisPage telaImoveisRuraisPage;
 	private TelaImoveisRuraisObject telaImoveisRuraisObject;
+	private TelaBensMoveisImoveisObject telaBensImoveisObject;
+	private TelaSelecaoPropostaObject telaSelecaoPropostaObject;
 	//private TelaSemoventesObject telaSemoventesObject;
 //	private TelaSemoventesPage telaSemoventesPage;
 	
@@ -56,5 +59,9 @@ public class PageObjectManager {
 	
 	public TelaBensMoveisImoveisObject getTelaBensMoveisObject() {
 		return (telaBensMoveisObject == null) ? telaBensMoveisObject = new TelaBensMoveisImoveisObject(driver) : telaBensMoveisObject;
+	}
+	
+	public TelaSelecaoPropostaObject getSelecaoPropostaObject() {
+		return (telaBensMoveisObject == null) ? telaSelecaoPropostaObject = new TelaSelecaoPropostaObject(driver) : telaSelecaoPropostaObject ;
 	}
 }

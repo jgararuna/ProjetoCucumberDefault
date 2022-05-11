@@ -102,8 +102,6 @@ public class TelaBensMoveisImoveisStep{
 	public void a_inclusao_bens_imoveis_sera_concluida_com_sucesso() throws Throwable {
 		Assert.assertTrue("O item foi adicionado da lista!", telaBensMoveisImoveisObject.confirmarInclusaoImoveis());
 		screenshot.getScreenshot("Lista_DepoisInclusao");
-//		Assert.assertTrue("O item não foi adicionado da lista!", telaBensMoveisObject.confirmarExclusao());
-//		screenshot.getScreenshot("Lista_Depois_Exclusao");
 	}
 	
 	
@@ -174,8 +172,5 @@ public class TelaBensMoveisImoveisStep{
 	@Quando("^preencho campo Valor Total$")
 	public void preencho_campo_Valor_Total() throws Throwable {
 	    telaBensMoveisImoveisObject.preencherValorTotal();
-	}
-
-
-	
+	}	
 }
